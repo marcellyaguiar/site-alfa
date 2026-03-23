@@ -26,7 +26,7 @@ body {
   transform:translateY(0);
 }
 
-/* 🔥 TOPO PREMIUM MÁXIMO */
+/* 🔥 TOPO PREMIUM */
 header {
   height:90vh;
   display:flex;
@@ -38,29 +38,26 @@ header {
   background:linear-gradient(180deg, #ffffff, #e9edf2);
 }
 
-/* LOGO GRANDE */
 header img {
   height:200px;
   max-width:90%;
   margin-bottom:30px;
 }
 
-/* TEXTO PRINCIPAL */
 h1 {
   font-size:36px;
   font-weight:600;
   max-width:700px;
-  margin-bottom:15px;
 }
 
-/* SUBTÍTULO */
 .subtitle {
   font-size:18px;
   color:#666;
   max-width:600px;
+  margin-top:10px;
 }
 
-/* BOTÃO PREMIUM */
+/* BOTÃO */
 .btn {
   margin-top:30px;
   padding:16px 34px;
@@ -75,18 +72,23 @@ h1 {
 
 .btn:hover {
   transform:translateY(-3px);
-  box-shadow:0 15px 40px rgba(10,132,255,0.4);
 }
 
-/* SEÇÕES CENTRALIZADAS */
+/* GATILHOS */
+.gatilhos {
+  margin-top:20px;
+  color:#0a84ff;
+  font-weight:500;
+}
+
+/* SEÇÕES */
 section {
   padding:100px 20px;
   max-width:800px;
-  margin:0 auto;
+  margin:auto;
   text-align:center;
 }
 
-/* TÍTULOS */
 h2 {
   font-size:28px;
   margin-bottom:40px;
@@ -103,8 +105,7 @@ h2 {
 .card {
   width:100%;
   max-width:500px;
-  background:rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+  background:white;
   padding:30px;
   border-radius:18px;
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
@@ -115,21 +116,34 @@ h2 {
   transform:translateY(-6px);
 }
 
-/* GALERIA */
-.galeria {
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  overflow-x:auto;
-}
-
-.galeria img, .galeria video {
-  width:280px;
+/* 🔥 CARROSSEL */
+.carousel {
+  width:100%;
+  overflow:hidden;
   border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* AVALIAÇÕES */
+.slides {
+  display:flex;
+  animation:slide 16s infinite;
+}
+
+.slides img, .slides video {
+  width:100%;
+  flex-shrink:0;
+  border-radius:16px;
+}
+
+/* ANIMAÇÃO */
+@keyframes slide {
+  0% {transform:translateX(0);}
+  25% {transform:translateX(-100%);}
+  50% {transform:translateX(-200%);}
+  75% {transform:translateX(-300%);}
+  100% {transform:translateX(0);}
+}
+
+/* AVALIAÇÃO */
 .avaliacoes img {
   width:100%;
   max-width:420px;
@@ -164,8 +178,9 @@ footer {
 
 <body>
 
-<!-- 🔥 TOPO IMPACTO MÁXIMO -->
+<!-- 🔥 TOPO -->
 <header class="fade">
+
   <img src="logo.png">
 
   <h1>
@@ -173,12 +188,19 @@ footer {
   </h1>
 
   <p class="subtitle">
-    Mais de 10 anos de experiência atendendo residências e condomínios com excelência
+    Mais de 10 anos de experiência atendendo residências e condomínios
   </p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Solicitar Orçamento
   </a>
+
+  <div class="gatilhos">
+    ✔ Orçamento rápido  
+    ✔ Atendimento imediato  
+    ✔ Serviço com garantia
+  </div>
+
 </header>
 
 <!-- SERVIÇOS -->
@@ -199,26 +221,30 @@ footer {
 
     <div class="card">
       <h3>Câmeras de Segurança</h3>
-      <p>Monitoramento inteligente para proteção da sua residência.</p>
+      <p>Monitoramento inteligente para proteger sua residência.</p>
     </div>
 
   </div>
 </section>
 
-<!-- GALERIA -->
+<!-- 🔥 CARROSSEL -->
 <section class="fade">
   <h2>Trabalhos Realizados</h2>
 
-  <div class="galeria">
+  <div class="carousel">
+    <div class="slides">
 
-    <video autoplay muted loop playsinline controls>
-      <source src="video1.mp4" type="video/mp4">
-    </video>
+      <video autoplay muted loop playsinline>
+        <source src="video1.mp4" type="video/mp4">
+      </video>
 
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
 
+    </div>
   </div>
+
 </section>
 
 <!-- AVALIAÇÕES -->
@@ -227,10 +253,10 @@ footer {
   <img src="avaliacao1.jpg">
 </section>
 
-<!-- CONTATO -->
+<!-- CTA FINAL -->
 <section class="fade">
-  <h2>Atendimento</h2>
-  <p>Atendemos residências e condomínios com rapidez e profissionalismo.</p>
+  <h2>Solicite seu orçamento agora</h2>
+  <p>Resposta rápida e sem compromisso</p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Falar no WhatsApp
