@@ -26,7 +26,7 @@ body {
   transform:translateY(0);
 }
 
-/* 🔥 HEADER PREMIUM */
+/* 🔥 HEADER ULTRA PREMIUM */
 header {
   height:100vh;
   display:flex;
@@ -36,46 +36,46 @@ header {
   text-align:center;
   padding:20px;
   background:linear-gradient(180deg, #ffffff, #e9edf2);
-  box-shadow: inset 0 -50px 100px rgba(0,0,0,0.03);
+  box-shadow: inset 0 -60px 120px rgba(0,0,0,0.05);
 }
 
-/* LOGO GRANDE */
+/* LOGO MAIS FORTE */
 header img {
-  height:240px;
+  height:260px;
   max-width:90%;
   margin-bottom:30px;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15));
 }
 
-/* TEXTO */
+/* TEXTO PRINCIPAL */
 h1 {
-  font-size:38px;
+  font-size:40px;
   font-weight:600;
-  max-width:700px;
+  max-width:750px;
   margin-bottom:20px;
 }
 
 .subtitle {
   font-size:18px;
-  color:#666;
+  color:#555;
   max-width:600px;
 }
 
 /* BOTÃO */
 .btn {
   margin-top:30px;
-  padding:16px 34px;
+  padding:18px 36px;
   background:#0a84ff;
   color:white;
-  border-radius:12px;
+  border-radius:14px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 10px 30px rgba(10,132,255,0.3);
+  box-shadow:0 12px 35px rgba(10,132,255,0.35);
   transition:0.3s;
 }
 
 .btn:hover {
-  transform:translateY(-3px);
+  transform:translateY(-4px);
 }
 
 /* GATILHOS */
@@ -84,6 +84,13 @@ h1 {
   color:#0a84ff;
   font-weight:500;
   line-height:1.6;
+}
+
+/* URGÊNCIA */
+.urgencia {
+  margin-top:10px;
+  color:#ff3b30;
+  font-weight:600;
 }
 
 /* SEÇÕES */
@@ -95,7 +102,7 @@ section {
 }
 
 h2 {
-  font-size:28px;
+  font-size:30px;
   margin-bottom:40px;
 }
 
@@ -109,35 +116,36 @@ h2 {
 
 .card {
   width:100%;
-  max-width:500px;
+  max-width:520px;
   background:white;
   padding:30px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.06);
   transition:0.3s;
 }
 
 .card:hover {
-  transform:translateY(-6px);
+  transform:translateY(-8px);
 }
 
-/* 🔥 CARROSSEL */
+/* 🔥 CARROSSEL ULTRA */
 .carousel {
   width:100%;
   overflow:hidden;
-  border-radius:16px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.1);
+  border-radius:18px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.12);
 }
 
 .slides {
   display:flex;
+  gap:20px;
   animation:slide 20s infinite ease-in-out;
 }
 
 .slides img, .slides video {
   width:100%;
   flex-shrink:0;
-  border-radius:16px;
+  border-radius:18px;
 }
 
 /* ANIMAÇÃO SUAVE */
@@ -153,8 +161,8 @@ h2 {
 .avaliacoes img {
   width:100%;
   max-width:420px;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 /* WHATSAPP FIXO */
@@ -164,11 +172,11 @@ h2 {
   right:20px;
   background:#25D366;
   color:white;
-  padding:16px 24px;
+  padding:16px 26px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  box-shadow:0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
@@ -190,19 +198,19 @@ footer {
   <img src="logo.png">
 
   <h1>
-    Portões Automáticos com Instalação Rápida e Garantia
+    Instalação de Portões Automáticos com Atendimento Rápido e Garantia
   </h1>
 
   <p class="subtitle">
-    Atendimento imediato em toda a região. Segurança e acabamento de alto padrão.
+    Segurança, praticidade e acabamento premium para sua residência ou empresa.
   </p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Chamar no WhatsApp Agora
   </a>
 
-  <p style="margin-top:15px; color:#888;">
-    Atendimento em até 1 hora
+  <p class="urgencia">
+    ⚡ Vagas limitadas para esta semana
   </p>
 
   <div class="gatilhos">
@@ -263,6 +271,12 @@ footer {
   <img src="avaliacao1.jpg">
 </section>
 
+<!-- REGIÃO -->
+<section class="fade">
+  <h2>Atendemos sua região</h2>
+  <p>Entre em contato e verifique disponibilidade imediata</p>
+</section>
+
 <!-- CTA FINAL -->
 <section class="fade">
   <h2>Solicite seu orçamento agora</h2>
@@ -277,12 +291,12 @@ footer {
   © Alfa Automação e Portões
 </footer>
 
-<!-- BOTÃO WHATSAPP -->
+<!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/5548991397281">
   WhatsApp
 </a>
 
-<!-- ANIMAÇÃO SCROLL -->
+<!-- ANIMAÇÃO -->
 <script>
 const elements = document.querySelectorAll('.fade');
 
