@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfa Automação e Portões</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f7fb;
+    color: #1a1a1a;
+}
+
+/* 🔥 TOPO PREMIUM */
+.topo {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.logo-topo {
+    height: 160px; /* LOGO GRANDE */
+    margin-bottom: 20px;
+}
+
+.topo h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.topo p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #25D366;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1ebe5d;
+}
+
+/* SEÇÕES */
+.section {
+    padding: 90px 20px;
+    max-width: 1100px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.6s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* CARROSSEL */
+.carousel {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+}
+
+.carousel img,
+.carousel video {
+    width: 320px;
+    height: 220px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 12px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* AVALIAÇÕES */
+.reviews {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.reviews img {
+    height: 260px;
+    border-radius: 12px;
+}
+
+/* CTA */
+.cta {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.cta h2 {
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* WHATS */
+.float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 65px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 TOPO COM LOGO GRANDE -->
+<section class="topo">
+    <img src="logo.png" class="logo-topo">
+    <h1>Alfa Automação e Portões</h1>
+    <p>Automação, fabricação e segurança com qualidade profissional</p>
+    <a href="https://wa.me/5548991397281" class="btn">Solicitar Orçamento</a>
+</section>
+
+<section class="section">
+    <h2>Diferenciais</h2>
+    <div class="grid">
+        <div class="card">✔ Mais de 10 anos de experiência</div>
+        <div class="card">✔ Atendimento rápido e organizado</div>
+        <div class="card">✔ Qualidade e garantia</div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Serviços</h2>
+    <div class="grid">
+        <div class="card">Motores para portões</div>
+        <div class="card">Manutenção</div>
+        <div class="card">Fabricação em alumínio</div>
+        <div class="card">Câmeras de segurança</div>
+        <div class="card">Cercas e sacadas</div>
+        <div class="card">Corrimão em alumínio</div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Trabalhos Realizados</h2>
+    <div class="carousel">
+        <div class="carousel-track">
+
+            <img src="foto1.jpg">
+            <img src="foto2.jpg">
+            <video src="video1.mp4" autoplay muted loop></video>
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+
+            <img src="foto1.jpg">
+            <img src="foto2.jpg">
+            <video src="video1.mp4" autoplay muted loop></video>
+            <img src="foto3.jpg">
+            <img src="foto4.jpg">
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Feedback dos Clientes</h2>
+    <div class="reviews">
+        <img src="avaliacao1.jpg">
+        <img src="avaliacao2.jpg">
+        <img src="avaliacao3.jpg">
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Solicite seu orçamento agora</h2>
+    <a href="https://wa.me/5548991397281" class="btn">Falar no WhatsApp</a>
+</section>
+
+<footer>
+    © 2026 Alfa Automação e Portões
+</footer>
+
+<a href="https://wa.me/5548991397281" class="float">💬</a>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
