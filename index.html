@@ -11,22 +11,23 @@
 body {
   margin:0;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:#f2f4f7;
-  color:#1a1a1a;
+  background:#f5f7fa;
+  color:#111;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO SUAVE */
 .fade {
   opacity:0;
-  transform:translateY(40px);
-  transition:1s cubic-bezier(0.22, 1, 0.36, 1);
+  transform:translateY(50px);
+  transition:1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .fade.show {
   opacity:1;
   transform:translateY(0);
 }
 
-/* HEADER */
+/* 🔥 HEADER LUXO */
 header {
   height:100vh;
   display:flex;
@@ -35,114 +36,109 @@ header {
   align-items:center;
   text-align:center;
   padding:20px;
-  background:linear-gradient(180deg, #ffffff, #e9edf2);
-  box-shadow: inset 0 -60px 120px rgba(0,0,0,0.05);
+  background:linear-gradient(180deg, #ffffff, #eef2f7);
 }
 
-/* LOGO */
+/* LOGO MAIS IMPACTO */
 header img {
-  height:260px;
-  max-width:90%;
-  margin-bottom:30px;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15));
+  height:280px;
+  margin-bottom:35px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
 }
 
-/* TEXTOS */
+/* TEXTO MAIS PREMIUM */
 h1 {
-  font-size:40px;
-  font-weight:600;
-  max-width:750px;
+  font-size:42px;
+  font-weight:500;
+  max-width:700px;
   margin-bottom:20px;
+  letter-spacing:-0.5px;
 }
 
 .subtitle {
   font-size:18px;
-  color:#555;
-  max-width:600px;
+  color:#666;
+  max-width:580px;
 }
 
-/* BOTÃO (🔥 MAIS ESPAÇADO) */
+/* BOTÃO LUXO */
 .btn {
-  margin-top:30px;
-  padding:18px 42px;
+  margin-top:35px;
+  padding:20px 48px;
   background:#0a84ff;
   color:white;
-  border-radius:14px;
+  border-radius:16px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 12px 35px rgba(10,132,255,0.35);
-  transition:0.3s;
-  letter-spacing:0.3px;
+  letter-spacing:0.4px;
+  box-shadow:0 15px 40px rgba(10,132,255,0.35);
+  transition:all 0.3s ease;
 }
 
 .btn:hover {
-  transform:translateY(-4px);
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(10,132,255,0.45);
 }
 
 /* GATILHOS */
 .gatilhos {
-  margin-top:20px;
+  margin-top:25px;
   color:#0a84ff;
-  font-weight:500;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 /* SEÇÕES */
 section {
-  padding:100px 20px;
-  max-width:800px;
+  padding:120px 20px;
+  max-width:820px;
   margin:auto;
   text-align:center;
 }
 
 h2 {
-  font-size:30px;
-  margin-bottom:40px;
+  font-size:32px;
+  font-weight:500;
+  margin-bottom:50px;
 }
 
-/* SERVIÇOS */
-.servicos {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:20px;
-}
-
+/* CARDS MAIS SOFISTICADOS */
 .card {
   width:100%;
   max-width:520px;
+  margin:auto;
   background:white;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.06);
-  transition:0.3s;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.06);
+  margin-bottom:25px;
+  transition:0.4s;
 }
 
 .card:hover {
-  transform:translateY(-8px);
+  transform:translateY(-10px) scale(1.01);
+  box-shadow:0 30px 80px rgba(0,0,0,0.08);
 }
 
-/* CARROSSEL (🔥 MAIS LENTO) */
+/* CARROSSEL LUXO */
 .carousel {
-  width:100%;
   overflow:hidden;
-  border-radius:18px;
-  box-shadow:0 25px 60px rgba(0,0,0,0.12);
+  border-radius:22px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.12);
 }
 
 .slides {
   display:flex;
-  gap:20px;
-  animation:slide 40s infinite ease-in-out;
+  gap:25px;
+  animation:slide 50s infinite ease-in-out;
 }
 
 .slides img, .slides video {
   width:100%;
+  border-radius:22px;
   flex-shrink:0;
-  border-radius:18px;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO SUPER SUAVE */
 @keyframes slide {
   0% {transform:translateX(0);}
   25% {transform:translateX(-100%);}
@@ -151,52 +147,51 @@ h2 {
   100% {transform:translateX(0);}
 }
 
-/* AVALIAÇÕES */
+/* AVALIAÇÃO */
 .avaliacoes img {
   width:100%;
   max-width:420px;
-  border-radius:18px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* WHATSAPP FIXO */
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
-  bottom:20px;
-  right:20px;
+  bottom:25px;
+  right:25px;
   background:#25D366;
   color:white;
-  padding:16px 26px;
+  padding:18px 28px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 12px 30px rgba(0,0,0,0.25);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
 footer {
   text-align:center;
-  padding:40px;
-  color:#888;
+  padding:50px;
+  color:#999;
+  font-size:14px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- TOPO -->
 <header class="fade">
 
   <img src="logo.png">
 
   <h1>
-    Instalação de Portões Automáticos com Atendimento Rápido e Garantia
+    Instalação de Portões Automáticos com Padrão Premium
   </h1>
 
   <p class="subtitle">
-    Segurança, praticidade e acabamento premium para sua residência ou empresa.
+    Segurança, tecnologia e acabamento de alto nível para sua residência ou empresa.
   </p>
 
   <a class="btn" href="https://wa.me/5548991397281">
@@ -204,38 +199,33 @@ footer {
   </a>
 
   <div class="gatilhos">
-    ✔ Atendimento rápido pelo WhatsApp <br>
-    ✔ Mais de 10 anos de experiência <br>
-    ✔ Garantia no serviço
+    ✔ Atendimento rápido <br>
+    ✔ Serviço com garantia <br>
+    ✔ Alto padrão de acabamento
   </div>
 
 </header>
 
-<!-- SERVIÇOS -->
 <section class="fade">
   <h2>Serviços</h2>
 
-  <div class="servicos">
-
-    <div class="card">
-      <h3>Portões em Alumínio</h3>
-      <p>Projetos sob medida com design moderno e acabamento de alto padrão.</p>
-    </div>
-
-    <div class="card">
-      <h3>Automação de Portões</h3>
-      <p>Instalação e manutenção de motores com segurança e eficiência.</p>
-    </div>
-
-    <div class="card">
-      <h3>Câmeras de Segurança</h3>
-      <p>Monitoramento inteligente para proteger sua residência.</p>
-    </div>
-
+  <div class="card">
+    <h3>Portões em Alumínio</h3>
+    <p>Projetos modernos com acabamento sofisticado.</p>
   </div>
+
+  <div class="card">
+    <h3>Automação</h3>
+    <p>Instalação de motores com máxima eficiência.</p>
+  </div>
+
+  <div class="card">
+    <h3>Câmeras</h3>
+    <p>Monitoramento inteligente e seguro.</p>
+  </div>
+
 </section>
 
-<!-- CARROSSEL -->
 <section class="fade">
   <h2>Trabalhos Realizados</h2>
 
@@ -255,22 +245,13 @@ footer {
 
 </section>
 
-<!-- AVALIAÇÕES -->
 <section class="avaliacoes fade">
   <h2>Clientes Satisfeitos</h2>
   <img src="avaliacao1.jpg">
 </section>
 
-<!-- REGIÃO -->
 <section class="fade">
-  <h2>Atendemos sua região</h2>
-  <p>Entre em contato e verifique disponibilidade imediata</p>
-</section>
-
-<!-- CTA FINAL -->
-<section class="fade">
-  <h2>Solicite seu orçamento agora</h2>
-  <p>Resposta rápida e sem compromisso</p>
+  <h2>Solicite seu orçamento</h2>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Falar no WhatsApp
@@ -281,12 +262,10 @@ footer {
   © Alfa Automação e Portões
 </footer>
 
-<!-- WHATSAPP FIXO -->
 <a class="whatsapp" href="https://wa.me/5548991397281">
   WhatsApp
 </a>
 
-<!-- ANIMAÇÃO -->
 <script>
 const elements = document.querySelectorAll('.fade');
 
