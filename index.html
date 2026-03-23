@@ -7,126 +7,131 @@
 
 <style>
 
-/* RESET */
+/* BASE */
 body {
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background:#f5f7fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:#f2f4f7;
   color:#1a1a1a;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO PREMIUM */
 .fade {
   opacity:0;
-  transform:translateY(30px);
-  transition:0.8s;
+  transform:translateY(40px);
+  transition:1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .fade.show {
   opacity:1;
   transform:translateY(0);
 }
 
-/* HEADER PREMIUM */
+/* HEADER (CAPA) */
 header {
   text-align:center;
-  padding:100px 20px 60px;
-  background:white;
+  padding:120px 20px 80px;
+  background:linear-gradient(180deg, #ffffff, #f2f4f7);
 }
 
 header img {
-  height:140px;
-  margin-bottom:25px;
+  height:160px;
+  margin-bottom:30px;
 }
 
 h1 {
-  font-size:32px;
-  margin-bottom:10px;
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:15px;
 }
 
 .subtitle {
-  font-size:16px;
+  font-size:17px;
   color:#666;
+  max-width:600px;
+  margin:auto;
 }
 
-/* BOTÃO */
+/* BOTÃO PREMIUM */
 .btn {
   display:inline-block;
-  margin-top:25px;
-  padding:15px 28px;
+  margin-top:30px;
+  padding:16px 32px;
   background:#0a84ff;
   color:white;
-  border-radius:10px;
+  border-radius:12px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:600;
   transition:0.3s;
+  box-shadow:0 10px 25px rgba(10,132,255,0.3);
 }
 
 .btn:hover {
-  background:#006fe0;
+  transform:translateY(-2px);
+  box-shadow:0 15px 35px rgba(10,132,255,0.4);
 }
 
 /* SEÇÕES */
 section {
-  padding:70px 20px;
-  max-width:1100px;
+  padding:90px 20px;
+  max-width:900px;
   margin:auto;
+  text-align:center;
 }
 
 /* TÍTULOS */
 h2 {
-  font-size:26px;
-  margin-bottom:30px;
+  font-size:28px;
+  margin-bottom:40px;
 }
 
-/* SERVIÇOS */
+/* CARDS PREMIUM */
 .servicos {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:25px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
 }
 
 .card {
-  background:white;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
   padding:30px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  border-radius:18px;
+  max-width:500px;
+  width:100%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
   transition:0.3s;
 }
 
 .card:hover {
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 }
 
 .card h3 {
   margin-bottom:10px;
 }
 
-/* GALERIA */
+/* GALERIA PREMIUM */
 .galeria {
   display:flex;
-  gap:15px;
+  gap:20px;
   overflow-x:auto;
+  justify-content:center;
+  padding-bottom:10px;
 }
 
 .galeria img, .galeria video {
-  width:300px;
-  border-radius:14px;
+  width:280px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* AVALIAÇÕES */
 .avaliacoes img {
   width:100%;
   max-width:420px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* RODAPÉ */
-footer {
-  text-align:center;
-  padding:40px;
-  font-size:14px;
-  color:#777;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* WHATSAPP */
@@ -136,11 +141,19 @@ footer {
   right:20px;
   background:#25D366;
   color:white;
-  padding:15px 22px;
+  padding:16px 24px;
   border-radius:50px;
   text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:40px;
+  font-size:14px;
+  color:#888;
 }
 
 </style>
@@ -153,7 +166,9 @@ footer {
 <header class="fade">
   <img src="logo.png">
   <h1>Automação e Portões com Qualidade e Segurança</h1>
-  <p class="subtitle">Atendimento rápido, serviço honesto e acabamento profissional</p>
+  <p class="subtitle">
+    Mais de 10 anos de experiência atendendo residências e condomínios com excelência e confiança
+  </p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Solicitar Orçamento
@@ -168,17 +183,17 @@ footer {
 
     <div class="card">
       <h3>Portões em Alumínio</h3>
-      <p>Projetos sob medida com design moderno, resistência e acabamento premium.</p>
+      <p>Projetos sob medida com design moderno, resistência e acabamento de alto padrão.</p>
     </div>
 
     <div class="card">
       <h3>Automação de Portões</h3>
-      <p>Instalação e manutenção de motores com eficiência e total segurança.</p>
+      <p>Instalação e manutenção de motores com segurança, agilidade e garantia.</p>
     </div>
 
     <div class="card">
       <h3>Câmeras de Segurança</h3>
-      <p>Sistemas de monitoramento para proteger sua residência ou condomínio.</p>
+      <p>Monitoramento inteligente para proteger sua residência ou condomínio.</p>
     </div>
 
   </div>
@@ -202,14 +217,14 @@ footer {
 
 <!-- AVALIAÇÕES -->
 <section class="avaliacoes fade">
-  <h2>Avaliações de Clientes</h2>
+  <h2>Clientes Satisfeitos</h2>
   <img src="avaliacao1.jpg">
 </section>
 
 <!-- CONTATO -->
 <section class="fade">
   <h2>Atendimento</h2>
-  <p>Atendemos Florianópolis, Palhoça e região.</p>
+  <p>Atendemos residências e condomínios com rapidez e profissionalismo.</p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Falar no WhatsApp
@@ -225,7 +240,7 @@ footer {
   WhatsApp
 </a>
 
-<!-- SCRIPT ANIMAÇÃO -->
+<!-- SCRIPT -->
 <script>
 const elements = document.querySelectorAll('.fade');
 
