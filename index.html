@@ -13,13 +13,14 @@ body {
   margin:0;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background:#ffffff;
-  color:#0a0a0a;
+  color:#0f172a;
+  line-height:1.5;
   -webkit-font-smoothing:antialiased;
 }
 
 /* HERO */
 .hero {
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -34,32 +35,34 @@ body {
 }
 
 .hero h1 {
-  font-size:44px;
+  font-size:42px;
   max-width:700px;
   font-weight:600;
-  letter-spacing:-1px;
+  letter-spacing:-0.5px;
 }
 
 .hero p {
   margin-top:15px;
-  color:#555;
+  color:#475569;
   font-size:18px;
 }
 
-/* BOTÃO */
+/* BOTÃO VERDE */
 .btn {
   margin-top:30px;
   padding:18px 40px;
-  background:#0a0a0a;
+  background:#2FBF71;
   color:white;
   border-radius:999px;
   text-decoration:none;
   font-weight:600;
   transition:0.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
-  opacity:0.8;
+  opacity:0.9;
+  transform:scale(1.05);
 }
 
 /* SEÇÕES */
@@ -67,12 +70,13 @@ body {
   padding:120px 20px;
   max-width:1100px;
   margin:auto;
+  text-align:center;
 }
 
 .section h2 {
-  font-size:36px;
+  font-size:34px;
   margin-bottom:60px;
-  text-align:center;
+  letter-spacing:-0.5px;
 }
 
 /* GRID */
@@ -80,6 +84,7 @@ body {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
+  align-items:stretch;
 }
 
 /* CARD */
@@ -87,6 +92,7 @@ body {
   padding:30px;
   border-radius:20px;
   background:#f8fafc;
+  border:1px solid rgba(0,0,0,0.04);
   transition:0.3s;
 }
 
@@ -98,11 +104,42 @@ body {
   margin-bottom:10px;
 }
 
-/* BANNER PREMIUM */
+/* CARROSSEL AJUSTADO */
+.carousel {
+  max-width:1000px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.slides {
+  display:flex;
+  gap:20px;
+  animation:slide 40s infinite;
+}
+
+.slides img,
+.slides video {
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+/* ANIMAÇÃO */
+@keyframes slide {
+  0% {transform:translateX(0);}
+  25% {transform:translateX(-100%);}
+  50% {transform:translateX(-200%);}
+  75% {transform:translateX(-300%);}
+  100% {transform:translateX(0);}
+}
+
+/* BANNER AZUL ESCURO */
 .banner {
   padding:120px 20px;
   text-align:center;
-  background:linear-gradient(180deg,#0f172a,#020617);
+  background:linear-gradient(180deg,#0F2A44,#0A1F33);
   color:white;
 }
 
@@ -115,36 +152,11 @@ body {
   margin-top:10px;
 }
 
-/* CARROSSEL */
-.carousel {
-  overflow:hidden;
-  border-radius:20px;
-}
-
-.slides {
-  display:flex;
-  gap:20px;
-  animation:slide 40s infinite;
-}
-
-.slides img, .slides video {
-  width:100%;
-  border-radius:20px;
-}
-
-@keyframes slide {
-  0% {transform:translateX(0);}
-  25% {transform:translateX(-100%);}
-  50% {transform:translateX(-200%);}
-  75% {transform:translateX(-300%);}
-  100% {transform:translateX(0);}
-}
-
 /* FOOTER */
 footer {
   text-align:center;
   padding:60px;
-  color:#888;
+  color:#64748b;
 }
 
 /* WHATSAPP */
@@ -157,6 +169,22 @@ footer {
   padding:14px 20px;
   border-radius:50px;
   text-decoration:none;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+  .hero h1 {
+    font-size:28px;
+  }
+
+  .slides img,
+  .slides video {
+    height:250px;
+  }
+
 }
 
 </style>
@@ -174,7 +202,7 @@ footer {
   </h1>
 
   <p>
-    Atendimento profissional em Florianópolis e região
+    Manutenção, fabricação e instalação em Florianópolis e região
   </p>
 
   <a class="btn" href="https://wa.me/5548991397281">
@@ -190,22 +218,22 @@ footer {
   <div class="grid">
 
     <div class="card">
-      <h3>Manutenção</h3>
+      <h3>⚡ Manutenção</h3>
       <p>Reparo rápido para portões que travaram ou pararam.</p>
     </div>
 
     <div class="card">
-      <h3>Automação</h3>
+      <h3>⚙️ Automação</h3>
       <p>Instalação de motores com segurança e eficiência.</p>
     </div>
 
     <div class="card">
-      <h3>Câmeras</h3>
-      <p>Instalação e configuração de monitoramento.</p>
+      <h3>🎥 Câmeras</h3>
+      <p>Instalação, ajustes e manutenção de monitoramento.</p>
     </div>
 
     <div class="card">
-      <h3>Fabricação</h3>
+      <h3>🏗️ Fabricação</h3>
       <p>Portões e cercas em alumínio sob medida.</p>
     </div>
 
@@ -228,10 +256,10 @@ footer {
   </div>
 </div>
 
-<!-- BANNER PREMIUM -->
+<!-- BANNER -->
 <div class="banner">
   <h2>Qualidade que você percebe no resultado</h2>
-  <p>Serviços bem executados, com organização e acabamento profissional</p>
+  <p>Serviço bem executado, organizado e com acabamento profissional</p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Solicitar orçamento
@@ -252,7 +280,7 @@ footer {
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5548991397281">
-  WhatsApp
+  Fale conosco
 </a>
 
 </body>
