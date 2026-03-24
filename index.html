@@ -75,31 +75,44 @@ body {
   color: #2FBF71 !important;
   margin-bottom: 12px;
   text-shadow: 0 2px 10px rgba(47,191,113,0.3);
+  opacity: 0.95;
 }
 
 @media (max-width:768px){
   .upper {
-    font-size:15px;
+    font-size: 15px;
+    letter-spacing: 2px;
   }
 }
 
 h1 {
-  font-size:34px;
+  font-size:32px;
   font-weight:800;
+  line-height:1.2;
 }
 
 h2 {
-  font-size:26px;
+  font-size:28px;
   font-weight:700;
 }
 
 h3 {
   font-size:20px;
+  font-weight:600;
 }
 
 p {
   font-size:16px;
   color:#64748b;
+}
+ 
+h1, h2 {
+  letter-spacing: -0.5px;
+}
+
+@media (max-width:768px){
+  h1 { font-size:28px; }
+  h2 { font-size:24px; }
 }
 
 /* BOTÃO */
@@ -111,9 +124,17 @@ p {
   border-radius:999px;
   text-decoration:none;
   font-weight:600;
+  display:inline-block;
 }
 
-/* SEÇÃO */
+/* TELEFONE */
+.phone a {
+  color:#2FBF71;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* SEÇÕES */
 .section {
   padding:90px 20px;
   max-width:1100px;
@@ -141,9 +162,16 @@ p {
   margin-right:8px;
 }
 
-/* CARROSSEL */
+/* VIDEO */
+video {
+  width:100%;
+  border-radius:15px;
+  margin-top:15px;
+}
+
+/* ===== CARROSSEL (ATUALIZADO) ===== */
 .carousel {
-  max-width:1000px;
+  max-width:900px;
   margin:auto;
   position:relative;
 }
@@ -160,10 +188,9 @@ p {
   display:none;
 }
 
-.slides img,
-.slides video {
+.slides img, .slides video {
   min-width:300px;
-  height:220px;
+  height:300px;
   object-fit:cover;
   border-radius:20px;
   flex-shrink:0;
@@ -178,7 +205,7 @@ p {
   border:none;
   color:white;
   font-size:24px;
-  padding:10px;
+  padding:10px 14px;
   border-radius:50%;
   cursor:pointer;
 }
@@ -186,14 +213,34 @@ p {
 .prev { left:10px; }
 .next { right:10px; }
 
-/* WHATS */
+/* FEEDBACK */
+.feedback-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.feedback-grid img {
+  width:100%;
+  border-radius:15px;
+}
+
+/* BANNER */
+.banner {
+  background:linear-gradient(180deg,#0F2A44,#0A1F33);
+  color:white;
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
   right:20px;
   background:#25D366;
   color:white;
-  padding:14px;
+  padding:14px 18px;
   border-radius:50px;
   text-decoration:none;
 }
@@ -203,58 +250,73 @@ p {
 
 <body>
 
+<!-- HERO -->
 <div class="hero fade">
 
-<img src="logo.png" class="logo">
+  <img src="logo.png" class="logo">
 
-<p class="upper">ATENDIMENTO PROFISSIONAL</p>
+  <p class="upper">ATENDIMENTO PROFISSIONAL</p>
 
-<h1>PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA</h1>
+  <h1>PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA</h1>
 
-<p style="color:#fff;">Instalação, manutenção e fabricação com padrão profissional</p>
+  <p style="color:#fff;">
+  Instalação, manutenção e fabricação com padrão profissional
+</p>
 
-<a class="btn" href="https://wa.me/5548991397281">FALAR NO WHATSAPP</a>
+  <div class="phone">
+    📞 <a href="https://wa.me/5548991397281">(48) 99139-7281</a>
+  </div>
+
+  <a class="btn" href="https://wa.me/5548991397281">
+    FALAR NO WHATSAPP
+  </a>
 
 </div>
 
+<!-- PROJETOS -->
 <div class="section fade">
 
-<p class="upper">NOSSOS TRABALHOS</p>
-<h2>Projetos realizados</h2>
+  <p class="upper">NOSSOS TRABALHOS</p>
+  <h2>Projetos realizados</h2>
 
-<div class="carousel">
+  <div class="carousel">
 
-<button class="prev">‹</button>
+    <button class="prev">‹</button>
 
-<div class="slides" id="slides">
+    <div class="slides" id="slides">
 
-<video muted loop autoplay><source src="video1.mp4"></video>
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
+      <video autoplay muted loop><source src="video1.mp4"></video>
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
 
-<video muted loop autoplay><source src="video1.mp4"></video>
-<img src="foto1.jpg">
-<img src="foto2.jpg">
+      <video autoplay muted loop><source src="video1.mp4"></video>
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
+
+    </div>
+
+    <button class="next">›</button>
+
+  </div>
 
 </div>
 
-<button class="next">›</button>
+<a class="whatsapp" href="https://wa.me/5548991397281">
+  WhatsApp
+</a>
 
-</div>
-
-</div>
-
-<a class="whatsapp" href="https://wa.me/5548991397281">WhatsApp</a>
-
+<!-- SCRIPT -->
 <script>
 
-/* ANIMAÇÃO SCROLL */
+/* ANIMAÇÃO */
 const elements = document.querySelectorAll('.fade');
 
 window.addEventListener('scroll', () => {
   elements.forEach(el => {
-    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
       el.classList.add('show');
     }
   });
@@ -262,11 +324,12 @@ window.addEventListener('scroll', () => {
 
 /* CARROSSEL AUTO + PAUSA */
 const slides = document.getElementById('slides');
+
 let autoSlide = setInterval(() => {
   slides.scrollBy({ left: 1, behavior: 'smooth' });
 }, 20);
 
-/* PAUSA AO INTERAGIR */
+/* PAUSA */
 slides.addEventListener('mouseenter', () => clearInterval(autoSlide));
 slides.addEventListener('touchstart', () => clearInterval(autoSlide));
 
