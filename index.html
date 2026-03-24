@@ -12,100 +12,107 @@
 body {
   margin:0;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:#f5f7fa;
-  color:#0f172a;
-  line-height:1.5;
+  background:#ffffff;
+  color:#0a0a0a;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* ANIMAÇÃO */
-.fade {
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
-}
-.fade.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* HEADER */
-header {
-  min-height:100vh;
+/* HERO */
+.hero {
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
   padding:20px;
-  background:linear-gradient(180deg,#ffffff,#eef2f7);
 }
 
-header img {
-  height:150px;
-  margin-bottom:20px;
+.logo {
+  height:120px;
+  margin-bottom:30px;
 }
 
-h1 {
-  font-size:34px;
-  max-width:600px;
-  margin-bottom:15px;
+.hero h1 {
+  font-size:44px;
+  max-width:700px;
   font-weight:600;
+  letter-spacing:-1px;
 }
 
-.subtitle {
-  color:#475569;
-  max-width:500px;
+.hero p {
+  margin-top:15px;
+  color:#555;
+  font-size:18px;
 }
 
 /* BOTÃO */
 .btn {
-  margin-top:25px;
-  padding:18px 36px;
-  background:#1E5AA8;
+  margin-top:30px;
+  padding:18px 40px;
+  background:#0a0a0a;
   color:white;
-  border-radius:12px;
+  border-radius:999px;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
   transition:0.3s;
 }
 
 .btn:hover {
-  transform:scale(1.05);
-}
-
-/* GATILHOS */
-.gatilhos {
-  margin-top:20px;
-  font-size:14px;
+  opacity:0.8;
 }
 
 /* SEÇÕES */
-section {
-  padding:80px 20px;
-  max-width:900px;
+.section {
+  padding:120px 20px;
+  max-width:1100px;
   margin:auto;
+}
+
+.section h2 {
+  font-size:36px;
+  margin-bottom:60px;
   text-align:center;
 }
 
-h2 {
-  font-size:28px;
-  margin-bottom:40px;
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
-  background:white;
-  padding:25px;
-  border-radius:16px;
-  margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(0,0,0,0.04);
+  padding:30px;
+  border-radius:20px;
+  background:#f8fafc;
   transition:0.3s;
 }
 
 .card:hover {
   transform:translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom:10px;
+}
+
+/* BANNER PREMIUM */
+.banner {
+  padding:120px 20px;
+  text-align:center;
+  background:linear-gradient(180deg,#0f172a,#020617);
+  color:white;
+}
+
+.banner h2 {
+  font-size:34px;
+}
+
+.banner p {
+  color:#cbd5e1;
+  margin-top:10px;
 }
 
 /* CARROSSEL */
@@ -116,7 +123,7 @@ h2 {
 
 .slides {
   display:flex;
-  gap:15px;
+  gap:20px;
   animation:slide 40s infinite;
 }
 
@@ -125,13 +132,19 @@ h2 {
   border-radius:20px;
 }
 
-/* ANIMAÇÃO */
 @keyframes slide {
   0% {transform:translateX(0);}
   25% {transform:translateX(-100%);}
   50% {transform:translateX(-200%);}
   75% {transform:translateX(-300%);}
   100% {transform:translateX(0);}
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:60px;
+  color:#888;
 }
 
 /* WHATSAPP */
@@ -141,18 +154,9 @@ h2 {
   right:20px;
   background:#25D366;
   color:white;
-  padding:16px 22px;
-  border-radius:40px;
+  padding:14px 20px;
+  border-radius:50px;
   text-decoration:none;
-  font-weight:600;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:40px;
-  color:#64748b;
 }
 
 </style>
@@ -160,63 +164,57 @@ footer {
 
 <body>
 
-<header class="fade">
+<!-- HERO -->
+<div class="hero">
 
-  <img src="logo.png">
+  <img src="logo.png" class="logo">
 
-  <h1>Seu portão parou? A gente resolve rápido.</h1>
+  <h1>
+    Automação, Segurança e Portões Sob Medida
+  </h1>
 
-  <p class="subtitle">
-    Atendimento rápido em Florianópolis e região.
+  <p>
+    Atendimento profissional em Florianópolis e região
   </p>
 
   <a class="btn" href="https://wa.me/5548991397281">
-    Chamar no WhatsApp agora
+    Falar no WhatsApp
   </a>
 
-  <div class="gatilhos">
-    ✔ Atendimento no mesmo dia <br>
-    ✔ Residencial e condomínios <br>
-    ✔ Orçamento sem compromisso
-  </div>
-
-</header>
-
-<!-- URGÊNCIA -->
-<section class="fade">
-  <div class="card">
-    <h3>⚠️ Portão travou ou parou?</h3>
-    <p>Resolvemos rápido para você não ficar na mão.</p>
-    <a class="btn" href="https://wa.me/5548991397281">
-      Chamar agora
-    </a>
-  </div>
-</section>
+</div>
 
 <!-- SERVIÇOS -->
-<section class="fade">
-  <h2>Serviços</h2>
+<div class="section">
+  <h2>Soluções completas</h2>
 
-  <div class="card">
-    <h3>Instalação de Motores</h3>
-    <p>Automatize seu portão com segurança e eficiência.</p>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Manutenção</h3>
+      <p>Reparo rápido para portões que travaram ou pararam.</p>
+    </div>
+
+    <div class="card">
+      <h3>Automação</h3>
+      <p>Instalação de motores com segurança e eficiência.</p>
+    </div>
+
+    <div class="card">
+      <h3>Câmeras</h3>
+      <p>Instalação e configuração de monitoramento.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fabricação</h3>
+      <p>Portões e cercas em alumínio sob medida.</p>
+    </div>
+
   </div>
-
-  <div class="card">
-    <h3>Manutenção de Portões</h3>
-    <p>Seu portão travou? Fazemos reparo rápido.</p>
-  </div>
-
-  <div class="card">
-    <h3>Câmeras de Segurança</h3>
-    <p>Proteja sua casa com monitoramento inteligente.</p>
-  </div>
-
-</section>
+</div>
 
 <!-- PROJETOS -->
-<section class="fade">
-  <h2>Projetos Realizados</h2>
+<div class="section">
+  <h2>Projetos realizados</h2>
 
   <div class="carousel">
     <div class="slides">
@@ -228,63 +226,34 @@ footer {
       <img src="foto3.jpg">
     </div>
   </div>
-</section>
+</div>
 
-<!-- PROVA SOCIAL -->
-<section class="fade">
-  <h2>Quem já confiou</h2>
+<!-- BANNER PREMIUM -->
+<div class="banner">
+  <h2>Qualidade que você percebe no resultado</h2>
+  <p>Serviços bem executados, com organização e acabamento profissional</p>
 
-  <div class="card">
-    <p>"Atendimento rápido e serviço impecável."</p>
-  </div>
-
-  <div class="card">
-    <p>"Resolveram meu portão no mesmo dia!"</p>
-  </div>
-
-</section>
-
-<!-- AUTORIDADE -->
-<section class="fade">
-  <h2>Por que escolher a Alfa?</h2>
-
-  <div class="card">
-    <p>✔ Atendimento rápido e direto</p>
-    <p>✔ Serviço limpo e organizado</p>
-    <p>✔ Profissional de confiança</p>
-  </div>
-</section>
+  <a class="btn" href="https://wa.me/5548991397281">
+    Solicitar orçamento
+  </a>
+</div>
 
 <!-- CTA FINAL -->
-<section class="fade">
+<div class="section">
   <h2>Precisa de ajuda com seu portão?</h2>
-  <p>Clique abaixo e fale direto no WhatsApp</p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     Falar agora
   </a>
-</section>
+</div>
 
 <footer>
   © Alfa Automação e Portões
 </footer>
 
 <a class="whatsapp" href="https://wa.me/5548991397281">
-  Fale conosco
+  WhatsApp
 </a>
-
-<script>
-const elements = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
