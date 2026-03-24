@@ -3,14 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Alfa Automação e Portões</title>
+
+<!-- FONTE PREMIUM -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* BASE */
 body {
   margin:0;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:'Montserrat', sans-serif;
   background:#ffffff;
   color:#0f172a;
 }
@@ -28,88 +32,84 @@ body {
   color:white;
 }
 
-/* LOGO GRANDE */
 .logo {
   height:260px;
-  max-width:90%;
-  object-fit:contain;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+  margin-bottom:25px;
 }
 
 @media (min-width:1024px){
   .logo { height:300px; }
 }
 
-@media (max-width:768px){
-  .logo { height:140px; }
+/* TEXTOS */
+.upper {
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:13px;
+  color:#2FBF71;
+  font-weight:600;
 }
 
-/* TEXTO */
 .hero h1 {
-  font-size:40px;
+  font-size:48px;
+  font-weight:800;
   max-width:700px;
+  line-height:1.1;
 }
 
 .hero p {
-  color:#e2e8f0;
+  color:#cbd5e1;
   font-size:18px;
-}
-
-/* TELEFONE */
-.phone {
-  margin-top:15px;
-  font-size:18px;
-}
-
-.phone a {
-  color:#2FBF71;
-  text-decoration:none;
-  font-weight:600;
 }
 
 /* BOTÃO */
 .btn {
   margin-top:25px;
-  padding:16px 36px;
+  padding:16px 38px;
   background:#2FBF71;
   color:white;
   border-radius:999px;
   text-decoration:none;
-  font-weight:600;
-  display:inline-block;
-  transition:0.3s;
+  font-weight:700;
 }
 
-.btn:hover {
-  transform:scale(1.05);
+/* TELEFONE */
+.phone a {
+  color:#2FBF71;
+  font-weight:600;
+  text-decoration:none;
 }
 
 /* SEÇÕES */
 .section {
-  padding:90px 20px;
+  padding:100px 20px;
   max-width:1100px;
   margin:auto;
   text-align:center;
 }
 
 .section h2 {
-  font-size:32px;
-  margin-bottom:40px;
+  font-size:34px;
+  font-weight:700;
 }
 
 /* GRID */
 .grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
 /* CARD */
 .card {
-  padding:25px;
+  padding:30px;
   border-radius:20px;
   background:#f8fafc;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* TEXTO */
+p {
+  color:#64748b;
 }
 
 /* VIDEO */
@@ -124,7 +124,6 @@ video {
   max-width:900px;
   margin:auto;
   overflow:hidden;
-  border-radius:20px;
 }
 
 .slides {
@@ -140,7 +139,6 @@ video {
   border-radius:20px;
 }
 
-/* ANIMAÇÃO */
 @keyframes slide {
   0% {transform:translateX(0);}
   25% {transform:translateX(-100%);}
@@ -166,17 +164,9 @@ video {
   background:linear-gradient(180deg,#0F2A44,#0A1F33);
   color:white;
   padding:80px 20px;
-  text-align:center;
 }
 
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:40px;
-  color:#64748b;
-}
-
-/* WHATSAPP FIXO */
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -186,7 +176,6 @@ footer {
   padding:14px 18px;
   border-radius:50px;
   text-decoration:none;
-  font-weight:600;
 }
 
 </style>
@@ -199,75 +188,82 @@ footer {
 
   <img src="logo.png" class="logo">
 
-  <h1>Automação, Segurança e Portões Sob Medida</h1>
+  <p class="upper">ATENDIMENTO PROFISSIONAL</p>
 
-  <p>Atendimento profissional em Florianópolis e região</p>
+  <h1>
+    PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA
+  </h1>
 
-  <!-- TELEFONE CLICÁVEL -->
+  <p>Instalação, manutenção e fabricação com padrão profissional</p>
+
   <div class="phone">
     📞 <a href="https://wa.me/5548991397281">(48) 99139-7281</a>
   </div>
 
   <a class="btn" href="https://wa.me/5548991397281">
-    Falar no WhatsApp
+    FALAR NO WHATSAPP
   </a>
 
 </div>
 
 <!-- SERVIÇOS -->
 <div class="section">
+
+  <p class="upper">O QUE FAZEMOS</p>
   <h2>Soluções completas</h2>
 
   <div class="grid">
 
     <div class="card">
-      <h3>⚡ Manutenção</h3>
-      <p>Reparo rápido para portões com defeito.</p>
+      <h3>Manutenção</h3>
+      <p>Reparo rápido de portões com defeito.</p>
     </div>
 
     <div class="card">
-      <h3>⚙️ Automação</h3>
+      <h3>Automação</h3>
       <p>Instalação de motores com segurança.</p>
     </div>
 
     <div class="card">
-      <h3>🎥 Câmeras</h3>
-      <p>Instalação e ajustes de segurança.</p>
+      <h3>Câmeras</h3>
+      <p>Sistemas de monitoramento e ajustes.</p>
     </div>
 
     <div class="card">
-      <h3>🏗️ Fabricação</h3>
+      <h3>Fabricação</h3>
       <p>Portões e cercas em alumínio sob medida.</p>
     </div>
 
   </div>
+
 </div>
 
-<!-- VIDEO -->
+<!-- PROVA REAL -->
 <div class="section">
-  <h2>Veja um serviço funcionando na prática</h2>
+
+  <p class="upper">RESULTADO REAL</p>
+  <h2>Veja na prática</h2>
 
   <div class="card">
 
-    <p><strong>Portão automatizado funcionando perfeitamente</strong></p>
-
-    <video controls poster="capa-video.jpg">
-      <source src="portao-cliente.mp4" type="video/mp4">
+    <video controls>
+      <source src="portao-cliente.mp4">
     </video>
 
-    <p style="margin-top:15px;">
-      Serviço rápido, organizado e com acabamento profissional.
-    </p>
+    <p>Serviço realizado com rapidez e acabamento profissional.</p>
 
     <a class="btn" href="https://wa.me/5548991397281">
-      Quero um serviço assim
+      QUERO UM SERVIÇO ASSIM
     </a>
 
   </div>
+
 </div>
 
 <!-- PROJETOS -->
 <div class="section">
+
+  <p class="upper">NOSSOS TRABALHOS</p>
   <h2>Projetos realizados</h2>
 
   <div class="carousel">
@@ -280,45 +276,34 @@ footer {
       <img src="foto3.jpg">
     </div>
   </div>
+
 </div>
 
 <!-- FEEDBACK -->
 <div class="section">
-  <h2>O que nossos clientes dizem</h2>
+
+  <p class="upper">CLIENTES</p>
+  <h2>O que dizem</h2>
 
   <div class="feedback-grid">
     <img src="feedback1.jpg">
     <img src="feedback2.jpg">
     <img src="feedback3.jpg">
   </div>
+
 </div>
 
 <!-- BANNER -->
 <div class="banner">
-  <h2>Qualidade que você percebe no resultado</h2>
-  <p>Serviço bem executado, organizado e profissional</p>
+
+  <h2>Qualidade que você percebe</h2>
+  <p>Serviço organizado, rápido e profissional</p>
 
   <a class="btn" href="https://wa.me/5548991397281">
-    Solicitar orçamento
+    SOLICITAR ORÇAMENTO
   </a>
+
 </div>
-
-<!-- FINAL -->
-<div class="section">
-  <h2>Precisa de ajuda com seu portão?</h2>
-
-  <div class="phone">
-    📞 <a href="https://wa.me/5548991397281">(48) 99139-7281</a>
-  </div>
-
-  <a class="btn" href="https://wa.me/5548991397281">
-    Falar agora
-  </a>
-</div>
-
-<footer>
-  © Alfa Automação e Portões
-</footer>
 
 <a class="whatsapp" href="https://wa.me/5548991397281">
   WhatsApp
