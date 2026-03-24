@@ -6,8 +6,11 @@
 
 <title>Alfa Automação e Portões</title>
 
-<!-- FONTE PREMIUM -->
+<!-- FONTES -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ÍCONES -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -15,8 +18,19 @@
 body {
   margin:0;
   font-family:'Montserrat', sans-serif;
-  background:#ffffff;
+  background:#fff;
   color:#0f172a;
+}
+
+/* ANIMAÇÃO */
+.fade {
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+.fade.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* HERO */
@@ -34,43 +48,60 @@ body {
 
 .logo {
   height:260px;
-  margin-bottom:25px;
 }
 
 @media (min-width:1024px){
   .logo { height:300px; }
 }
 
-/* TEXTOS */
+@media (max-width:768px){
+  .logo { height:140px; }
+}
+
+/* TIPOGRAFIA */
 .upper {
   text-transform:uppercase;
   letter-spacing:2px;
   font-size:13px;
   color:#2FBF71;
+  margin-bottom:10px;
+}
+
+h1 {
+  font-size:42px;
+  font-weight:800;
+}
+
+h2 {
+  font-size:30px;
+  font-weight:700;
+}
+
+h3 {
+  font-size:20px;
   font-weight:600;
 }
 
-.hero h1 {
-  font-size:48px;
-  font-weight:800;
-  max-width:700px;
-  line-height:1.1;
+p {
+  font-size:16px;
+  color:#64748b;
 }
 
-.hero p {
-  color:#cbd5e1;
-  font-size:18px;
+@media (max-width:768px){
+  h1 { font-size:28px; }
+  h2 { font-size:24px; }
 }
 
 /* BOTÃO */
 .btn {
-  margin-top:25px;
-  padding:16px 38px;
+  margin-top:20px;
+  padding:15px 35px;
   background:#2FBF71;
   color:white;
   border-radius:999px;
   text-decoration:none;
-  font-weight:700;
+  font-weight:600;
+  display:inline-block;
 }
 
 /* TELEFONE */
@@ -82,34 +113,30 @@ body {
 
 /* SEÇÕES */
 .section {
-  padding:100px 20px;
+  padding:90px 20px;
   max-width:1100px;
   margin:auto;
   text-align:center;
-}
-
-.section h2 {
-  font-size:34px;
-  font-weight:700;
 }
 
 /* GRID */
 .grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:25px;
 }
 
 /* CARD */
 .card {
-  padding:30px;
+  padding:25px;
   border-radius:20px;
   background:#f8fafc;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* TEXTO */
-p {
-  color:#64748b;
+.card i {
+  color:#2FBF71;
+  margin-right:8px;
 }
 
 /* VIDEO */
@@ -129,22 +156,20 @@ video {
 .slides {
   display:flex;
   gap:20px;
-  animation:slide 40s infinite;
+  animation:slide 60s linear infinite;
 }
 
 .slides img, .slides video {
   width:100%;
-  height:320px;
+  height:300px;
   object-fit:cover;
   border-radius:20px;
 }
 
+/* ANIMAÇÃO DO CARROSSEL (CONTÍNUO) */
 @keyframes slide {
   0% {transform:translateX(0);}
-  25% {transform:translateX(-100%);}
-  50% {transform:translateX(-200%);}
-  75% {transform:translateX(-300%);}
-  100% {transform:translateX(0);}
+  100% {transform:translateX(-50%);}
 }
 
 /* FEEDBACK */
@@ -164,6 +189,7 @@ video {
   background:linear-gradient(180deg,#0F2A44,#0A1F33);
   color:white;
   padding:80px 20px;
+  text-align:center;
 }
 
 /* WHATSAPP */
@@ -184,15 +210,13 @@ video {
 <body>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero fade">
 
   <img src="logo.png" class="logo">
 
   <p class="upper">ATENDIMENTO PROFISSIONAL</p>
 
-  <h1>
-    PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA
-  </h1>
+  <h1>PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA</h1>
 
   <p>Instalação, manutenção e fabricação com padrão profissional</p>
 
@@ -207,7 +231,7 @@ video {
 </div>
 
 <!-- SERVIÇOS -->
-<div class="section">
+<div class="section fade">
 
   <p class="upper">O QUE FAZEMOS</p>
   <h2>Soluções completas</h2>
@@ -215,22 +239,22 @@ video {
   <div class="grid">
 
     <div class="card">
-      <h3>Manutenção</h3>
+      <h3><i class="fas fa-tools"></i> Manutenção</h3>
       <p>Reparo rápido de portões com defeito.</p>
     </div>
 
     <div class="card">
-      <h3>Automação</h3>
+      <h3><i class="fas fa-cogs"></i> Automação</h3>
       <p>Instalação de motores com segurança.</p>
     </div>
 
     <div class="card">
-      <h3>Câmeras</h3>
+      <h3><i class="fas fa-video"></i> Câmeras</h3>
       <p>Sistemas de monitoramento e ajustes.</p>
     </div>
 
     <div class="card">
-      <h3>Fabricação</h3>
+      <h3><i class="fas fa-industry"></i> Fabricação</h3>
       <p>Portões e cercas em alumínio sob medida.</p>
     </div>
 
@@ -238,8 +262,8 @@ video {
 
 </div>
 
-<!-- PROVA REAL -->
-<div class="section">
+<!-- VIDEO -->
+<div class="section fade">
 
   <p class="upper">RESULTADO REAL</p>
   <h2>Veja na prática</h2>
@@ -250,7 +274,7 @@ video {
       <source src="portao-cliente.mp4">
     </video>
 
-    <p>Serviço realizado com rapidez e acabamento profissional.</p>
+    <p>Serviço rápido, organizado e profissional.</p>
 
     <a class="btn" href="https://wa.me/5548991397281">
       QUERO UM SERVIÇO ASSIM
@@ -261,26 +285,32 @@ video {
 </div>
 
 <!-- PROJETOS -->
-<div class="section">
+<div class="section fade">
 
   <p class="upper">NOSSOS TRABALHOS</p>
   <h2>Projetos realizados</h2>
 
   <div class="carousel">
     <div class="slides">
-      <video autoplay muted loop>
-        <source src="video1.mp4">
-      </video>
+
+      <!-- DUPLICAÇÃO PARA LOOP SUAVE -->
+      <video autoplay muted loop><source src="video1.mp4"></video>
       <img src="foto1.jpg">
       <img src="foto2.jpg">
       <img src="foto3.jpg">
+
+      <video autoplay muted loop><source src="video1.mp4"></video>
+      <img src="foto1.jpg">
+      <img src="foto2.jpg">
+      <img src="foto3.jpg">
+
     </div>
   </div>
 
 </div>
 
 <!-- FEEDBACK -->
-<div class="section">
+<div class="section fade">
 
   <p class="upper">CLIENTES</p>
   <h2>O que dizem</h2>
@@ -294,7 +324,7 @@ video {
 </div>
 
 <!-- BANNER -->
-<div class="banner">
+<div class="banner fade">
 
   <h2>Qualidade que você percebe</h2>
   <p>Serviço organizado, rápido e profissional</p>
@@ -308,6 +338,20 @@ video {
 <a class="whatsapp" href="https://wa.me/5548991397281">
   WhatsApp
 </a>
+
+<!-- SCRIPT ANIMAÇÃO -->
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
