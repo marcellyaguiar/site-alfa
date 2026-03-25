@@ -501,7 +501,7 @@ let auto;
 function startAuto(){
   stopAuto(); // 👈 evita duplicar
   auto = setInterval(() => {
-    slides.scrollLeft += 2;
+    slides.scrollLeft += 1;
   }, 20);
 }
 
@@ -552,15 +552,21 @@ slides.addEventListener('mousemove', (e) => {
 /* BOTÕES */
 if(leftBtn && rightBtn){
   leftBtn.addEventListener('click', () => {
-    slides.scrollLeft -= 300;
+    stopAuto(); // 👈 pausa
+    slides.scrollBy({
+      left: -300,
+      behavior: 'smooth'
+    });
+    startAuto(); // 👈 volta depois
   });
 
   rightBtn.addEventListener('click', () => {
-    sslides.scrollBy({
-  left: 300,
-  behavior: 'smooth'
-});
+    stopAuto(); // 👈 pausa
+    slides.scrollBy({
+      left: 300,
+      behavior: 'smooth'
+    });
+    startAuto(); // 👈 volta depois
+  });
 }
-
-}
-</script>
+  </script>
