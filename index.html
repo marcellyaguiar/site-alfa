@@ -4,362 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alfa Automação e Portões</title>
+<title>Alfa Automação e Portões • Florianópolis</title>
 
-<!-- FONTES -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- SEO -->
+<meta name="description" content="Alfa Automação e Portões em Florianópolis e região. Instalação, manutenção e automação de portões com atendimento rápido, profissional e com garantia.">
+<meta name="keywords" content="portões automáticos, automação, manutenção, segurança, portões, Florianópolis, motor de portão, câmeras de segurança">
+<meta name="author" content="Alfa Automação e Portões">
+
+<!-- FONTE -->
+https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap
 
 <!-- ÍCONES -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
 
-<style>
+<!-- CSS -->
+css/style.css
 
-/* BASE */
-body {
-  margin:0;
-  font-family:'Montserrat', sans-serif;
-  background:#fff;
-  color:#0f172a;
-}
-
-/* ANIMAÇÃO */
-.fade {
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
-}
-.fade.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* HERO */
-.hero {
-  min-height:75vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:60px 20px;
-  background:linear-gradient(180deg,#0F2A44,#1E5AA8);
-  color:white;
-}
-
-@media (max-width:768px){
-  .hero {
-    min-height:70vh;
-    padding:40px 20px;
-  }
-}
-
-/* LOGO */
-.logo {
-  height:320px;
-  max-width:90%;
-  object-fit:contain;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.25));
-}
-
-@media (min-width:1024px){
-  .logo { height:380px; }
-}
-
-@media (max-width:768px){
-  .logo { height:160px; }
-}
-
-/* TIPOGRAFIA */
-.upper {
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-size: 18px;
-  font-weight: 800;
-  color: #2FBF71 !important;
-  margin-bottom: 12px;
-  text-shadow: 0 2px 10px rgba(47,191,113,0.3);
-  opacity: 0.95;
-}
-
-@media (max-width:768px){
-  .upper {
-    font-size: 15px;
-    letter-spacing: 2px;
-  }
-}
-
-h1 {
-  font-size:32px;
-  font-weight:800;
-  line-height:1.2;
-}
-
-h2 {
-  font-size:28px;
-  font-weight:700;
-}
-
-h3 {
-  font-size:20px;
-  font-weight:600;
-}
-
-p {
-  font-size:16px;
-  color:#64748b;
-}
-
-h1, h2 {
-  letter-spacing: -0.5px;
-}
-
-@media (max-width:768px){
-  h1 { font-size:28px; }
-  h2 { font-size:24px; }
-}
-
-/* BOTÃO */
-.btn {
-  margin-top:20px;
-  padding:15px 35px;
-  background:#2FBF71;
-  color:white;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  display:inline-block;
- box-shadow: 0 10px 25px rgba(47,191,113,0.4);
-  transition: all 0.3s ease;
-
-}
-
-/* TELEFONE */
-.phone a {
-  color:#2FBF71;
-  font-weight:600;
-  text-decoration:none;
-}
-
-/* SEÇÕES */
-.section {
-  padding:90px 20px;
-  max-width:1100px;
-  margin:auto;
-  text-align:center;
-}
-
-/* GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-
-/* CARD */
-.card {
-  padding:25px;
-  border-radius:20px;
-  background:#f8fafc;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
-}
-
-/* VIDEO */
- 
-
-.carousel-item {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
-}
-/* ===== CARROSSEL ATUALIZADO ===== */
-.carousel {
-  max-width:900px;
-  margin:auto;
-  overflow:hidden;
-  position: relative; /* 👈 MUITO IMPORTANTE */
-}
-  .arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: #fff;
-  font-size: 28px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-}
-
-.arrow.left {
-  left: 10px;
-}
-
-.arrow.right {
-  right: 10px;
-}
-
-.arrow:hover {
-  background: #2FBF71;
-}
-
-.slides {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  cursor: grab;
-  padding: 10px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.slides:active {
-  cursor: grabbing;
-}
-
-.slides::-webkit-scrollbar {
-  display: none;
-}
-
-.slides img,
-.slides video {
-  min-width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px;
-  flex-shrink: 0;
-  transition: transform 0.4s ease;
-}
-
-.slides img:hover,
-.slides video:hover {
-  transform: scale(1.05);
-}
-
-
-/* FEEDBACK */
-.feedback-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.feedback-grid img {
-  width:100%;
-  border-radius:15px;
-}
-
-/* BANNER */
-.banner {
-  background:linear-gradient(180deg,#0F2A44,#0A1F33);
-  color:white;
-  padding:80px 20px;
-  text-align:center;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:50px;
-  text-decoration:none;
-}
-  .benefits {
-  margin-top:15px;
-}
-
-.benefits p {
-  color:#fff;
-  font-size:15px;
-  margin:5px 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-}
-
-.benefits p::before {
-  content:"✔";
-  color:#2FBF71;
-  font-weight:bold;
-}
-  .benefits p {
-  font-weight:600;
-}
-
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: #fff;
-  font-size: 28px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-}
-
-.arrow.left {
-  left: 10px;
-}
-
-.arrow.right {
-  right: 10px;
-}
-
-.arrow:hover {
-  background: #2FBF71;
-}
-</style>
 </head>
-
 <body>
 
 <!-- HERO -->
-<div class="hero fade">
-
-  <img src="logo.png" class="logo">
+<header class="hero fade">
+  assets/img/logo.png
 
   <p class="upper">ATENDIMENTO PROFISSIONAL</p>
 
   <h1>PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA</h1>
 
-  <p style="color:#fff;">
-Instalação, manutenção e fabricação com padrão profissional
-</p>
+  <p class="hero-sub">Instalação, manutenção e fabricação com padrão profissional</p>
 
-<div class="benefits">
-  <p>✔ Atendimento rápido em Florianópolis</p>
-  <p>✔ Orçamento sem compromisso</p>
-</div>
-
-  <div class="phone">
-    📞 <a href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">(48) 99139-7281</a>
+  <div class="benefits">
+    <p>Atendimento rápido em Florianópolis e região</p>
+    <p>Orçamento sem compromisso</p>
   </div>
 
-  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
-SOLICITAR ORÇAMENTO AGORA  </a>
+  <div class="phone">
+    📞 https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento (48) 99139‑7281 </a>
+  </div>
 
-</div>
+  https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento
+</header>
 
 <!-- SERVIÇOS -->
-<div class="section fade">
-
+<section class="section fade">
   <p class="upper">O QUE FAZEMOS</p>
   <h2>Soluções completas</h2>
 
@@ -367,209 +54,142 @@ SOLICITAR ORÇAMENTO AGORA  </a>
 
     <div class="card">
       <h3><i class="fas fa-tools"></i> Manutenção</h3>
-      <p>Reparo rápido de portões com defeito.</p>
+      <p>Reparo rápido e seguro de portões com defeito.</p>
     </div>
 
     <div class="card">
       <h3><i class="fas fa-cogs"></i> Automação</h3>
-      <p>Instalação de motores com segurança.</p>
+      <p>Instalação de motores e sistemas de segurança.</p>
     </div>
 
     <div class="card">
       <h3><i class="fas fa-video"></i> Câmeras</h3>
-      <p>Sistemas de monitoramento e ajustes.</p>
+      <p>Monitoramento e configurações profissionais.</p>
     </div>
 
     <div class="card">
       <h3><i class="fas fa-industry"></i> Fabricação</h3>
-      <p>Portões e cercas em alumínio sob medida.</p>
+      <p>Portões e estruturas sob medida.</p>
     </div>
 
   </div>
+</section>
 
-</div>
-
-<!-- VIDEO -->
-<div class="section fade">
-
+<!-- VÍDEO -->
+<section class="section fade">
   <p class="upper">RESULTADO REAL</p>
   <h2>Veja na prática</h2>
 
   <div class="card">
-
-    <video controls>
-      <source src="portao-cliente.mp4">
+    <video controls poster="assets/img/thumb.jpg">
+      assets/video/portao-cliente.mp4
     </video>
 
     <p>Serviço rápido, organizado e profissional.</p>
 
-    <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
+    https://wa.me/5548991397281?text=Quero%20um%20serviço%20assim
       QUERO UM SERVIÇO ASSIM
     </a>
-
   </div>
-
-</div>
+</section>
 
 <!-- PROJETOS -->
-<div class="section fade">
-
+<section class="section fade">
   <p class="upper">NOSSOS TRABALHOS</p>
   <h2>Projetos realizados</h2>
 
- <div class="carousel">
+  <div class="carousel">
 
-  <button class="arrow left" id="leftBtn">&#10094;</button>
-  <button class="arrow right" id="rightBtn">&#10095;</button>
+    <button class="arrow left" id="leftBtn">&#10094;</button>
+    <button class="arrow right" id="rightBtn">&#10095;</button>
 
-  <div class="slides" id="slides">
-
-      <video autoplay muted loop><source src="video1.mp4"></video>
-      <img src="foto1.jpg">
-      <img src="foto2.jpg">
-      <img src="foto3.jpg">
-
-      <video autoplay muted loop><source src="video1.mp4"></video>
-      <img src="foto1.jpg">
-      <img src="foto2.jpg">
-      <img src="foto3.jpg">
-
+    <div class="slides" id="slides">
+      <video autoplay muted loop>assets/video/video1.mp4</video>
+      assets/img/foto1.jpg
+      assets/img/foto2.jpg
+      assets/img/foto3.jpg
     </div>
-  </div>
 
-</div>
+  </div>
+</section>
 
 <!-- FEEDBACK -->
-<div class="section fade">
-
+<section class="section fade">
   <p class="upper">CLIENTES</p>
   <h2>Clientes satisfeitos em Florianópolis</h2>
 
   <div class="feedback-grid">
-    <img src="feedback1.jpg">
-    <img src="feedback2.jpg">
-    <img src="feedback3.jpg">
+    assets/img/feedback1.jpg
+    assets/img/feedback2.jpg
+    assets/img/feedback3.jpg
   </div>
-
-</div>
+</section>
 
 <!-- BANNER -->
-<div class="banner fade">
-
+<section class="banner fade">
   <h2>Precisa de um portão funcionando hoje?</h2>
-<p>Atendimento rápido, organizado e com garantia</p>
+  <p>Atendimento rápido, organizado e com garantia.</p>
 
-  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
-    SOLICITAR ORÇAMENTO
-  </a>
+  https://wa.me/5548991397281?text=Quero%20um%20orçamento
+</section>
 
-</div>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Alfa Automação e Portões • Florianópolis e região  
+</footer>
 
-<a class="whatsapp" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
-  WhatsApp
-</a>
+<!-- WHATSAPP FLOAT -->
+https://wa.me/5548991397281?text=Quero%20um%20orçamento
 
-<!-- SCRIPT ANIMAÇÃO -->
+<!-- ANIMAÇÃO -->
 <script>
 const elements = document.querySelectorAll('.fade');
 
 window.addEventListener('scroll', () => {
   elements.forEach(el => {
     const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
+    if(top < window.innerHeight - 110){
       el.classList.add('show');
     }
   });
 });
-
 </script>
 
-
+<!-- CARROSSEL -->
 <script>
 const slides = document.getElementById('slides');
 const leftBtn = document.getElementById('leftBtn');
 const rightBtn = document.getElementById('rightBtn');
 
-if (slides) {
+let autoScroll;
 
-let isDown = false;
-let startX;
-let scrollLeft;
-let auto = null;
-
-/* AUTO SCROLL */
-function startAuto(){
-  stopAuto(); // evita duplicar
-  auto = setInterval(() => {
-    slides.scrollLeft += 1; // velocidade suave
-  }, 20);
+function startAuto() {
+  autoScroll = setInterval(() => {
+    slides.scrollLeft += 1;
+  }, 18);
 }
 
-function stopAuto(){
-  if(auto){
-    clearInterval(auto);
-    auto = null;
-  }
+function stopAuto() {
+  clearInterval(autoScroll);
 }
 
-/* INICIAR */
 startAuto();
 
-/* PAUSAR AO INTERAGIR */
 slides.addEventListener('mouseenter', stopAuto);
 slides.addEventListener('mouseleave', startAuto);
-slides.addEventListener('touchstart', stopAuto);
-slides.addEventListener('touchend', startAuto);
 
-/* ARRASTAR */
-slides.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slides.style.cursor = "grabbing";
-  startX = e.pageX - slides.offsetLeft;
-  scrollLeft = slides.scrollLeft;
+leftBtn.addEventListener('click', () => {
+  stopAuto();
+  slides.scrollBy({ left: -350, behavior: 'smooth' });
+  setTimeout(startAuto, 800);
 });
 
-slides.addEventListener('mouseup', () => {
-  isDown = false;
-  slides.style.cursor = "grab";
+rightBtn.addEventListener('click', () => {
+  stopAuto();
+  slides.scrollBy({ left: 350, behavior: 'smooth' });
+  setTimeout(startAuto, 800);
 });
-
-slides.addEventListener('mouseleave', () => {
-  isDown = false;
-});
-
-slides.addEventListener('mousemove', (e) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slides.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  slides.scrollLeft = scrollLeft - walk;
-});
-
-/* BOTÕES (CORRIGIDO) */
-if(leftBtn){
-  leftBtn.addEventListener('click', () => {
-    stopAuto();
-    slides.scrollBy({
-      left: -320,
-      behavior: 'smooth'
-    });
-
-    setTimeout(startAuto, 800); // volta depois
-  });
-}
-
-if(rightBtn){
-  rightBtn.addEventListener('click', () => {
-    stopAuto();
-    slides.scrollBy({
-      left: 320,
-      behavior: 'smooth'
-    });
-
-    setTimeout(startAuto, 800);
-  });
-}
-
-}
 </script>
+
+</body>
+</html>
