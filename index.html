@@ -216,45 +216,31 @@ h1, h2 {
   background: #2FBF71;
 }
 
-..slides {
+.slides {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
   cursor: grab;
-  padding: 10px; /* 👈 melhora toque */
-}
-  .slides {
+  padding: 10px;
   -webkit-overflow-scrolling: touch;
 }
 
 .slides:active {
-  cursor:grabbing;
+  cursor: grabbing;
 }
 
 .slides::-webkit-scrollbar {
-  display:none;
+  display: none;
 }
 
-.slides img {
-  min-width:300px;
-  height:300px;
-  object-fit:cover;
-  border-radius:20px;
-  flex-shrink:0;
-}
-
+.slides img,
 .slides video {
-  min-width:300px;
-  height:auto;
-  object-fit:cover;
-  background:#000;
-  border-radius:20px;
-  flex-shrink:0;
-
-}
-  .slides img,
-.slides video {
+  min-width: 300px;
+  height: 300px; /* 👈 deixa tudo alinhado */
+  object-fit: cover;
+  border-radius: 20px;
+  flex-shrink: 0;
   transition: transform 0.4s ease;
 }
 
