@@ -499,8 +499,9 @@ let auto;
 
 /* FUNÇÃO AUTO */
 function startAuto(){
+  stopAuto(); // 👈 evita duplicar
   auto = setInterval(() => {
-    slides.scrollLeft += 2; // velocidade melhor
+    slides.scrollLeft += 2;
   }, 20);
 }
 
@@ -555,7 +556,11 @@ if(leftBtn && rightBtn){
   });
 
   rightBtn.addEventListener('click', () => {
-    slides.scrollLeft += 300;
-  });
+    sslides.scrollBy({
+  left: 300,
+  behavior: 'smooth'
+});
+}
+
 }
 </script>
