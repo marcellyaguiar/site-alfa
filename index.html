@@ -188,6 +188,32 @@ h1, h2 {
   max-width:900px;
   margin:auto;
   overflow:hidden;
+  position: relative; /* 👈 MUITO IMPORTANTE */
+}
+  .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  background: #2FBF71;
 }
 
 .slides {
@@ -217,7 +243,7 @@ h1, h2 {
 .slides video {
   min-width:300px;
   height:300px;
-  object-fit:contain;
+  object-fit:cover;
   background:#000;
   border-radius:20px;
   flex-shrink:0;
@@ -288,6 +314,35 @@ h1, h2 {
   font-weight:600;
 }
 
+  .carousel {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  background: #2FBF71;
+}
 </style>
 </head>
 
@@ -446,23 +501,43 @@ window.addEventListener('scroll', () => {
 
 <script>
 const slides = document.getElementById('slides');
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
 
 if(slides){
 
 let isDown = false;
 let startX;
 let scrollLeft;
+let auto;
 
-/* AUTO SCROLL */
-let auto = setInterval(() => {
-  slides.scrollLeft += 1; // velocidade
-}, 20);
+/* FUNÇÃO AUTO */
+function startAuto(){
+  auto = setInterval(() => {
+    slides.scrollLeft += 2; // velocidade melhor
+  }, 20);
+}
+
+/* INICIA */
+startAuto();
 
 /* PAUSA */
-const stopAuto = () => clearInterval(auto);
+function stopAuto(){
+  clearInterval(auto);
+}
 
+/* RETOMA */
+function resumeAuto(){
+  startAuto();
+}
+
+/* HOVER */
 slides.addEventListener('mouseenter', stopAuto);
+slides.addEventListener('mouseleave', resumeAuto);
+
+/* MOBILE */
 slides.addEventListener('touchstart', stopAuto);
+slides.addEventListener('touchend', resumeAuto);
 
 /* ARRASTAR */
 slides.addEventListener('mousedown', (e) => {
@@ -471,8 +546,8 @@ slides.addEventListener('mousedown', (e) => {
   scrollLeft = slides.scrollLeft;
 });
 
-slides.addEventListener('mouseleave', () => isDown = false);
 slides.addEventListener('mouseup', () => isDown = false);
+slides.addEventListener('mouseleave', () => isDown = false);
 
 slides.addEventListener('mousemove', (e) => {
   if(!isDown) return;
@@ -480,6 +555,15 @@ slides.addEventListener('mousemove', (e) => {
   const x = e.pageX - slides.offsetLeft;
   const walk = (x - startX) * 1.5;
   slides.scrollLeft = scrollLeft - walk;
+});
+
+/* BOTÕES */
+leftBtn.addEventListener('click', () => {
+  slides.scrollLeft -= 300;
+});
+
+rightBtn.addEventListener('click', () => {
+  slides.scrollLeft += 300;
 });
 
 }
