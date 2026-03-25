@@ -206,12 +206,22 @@ h1, h2 {
   display:none;
 }
 
-.slides img, .slides video {
+.slides img {
   min-width:300px;
   height:300px;
   object-fit:cover;
   border-radius:20px;
   flex-shrink:0;
+}
+
+.slides video {
+  min-width:300px;
+  height:300px;
+  object-fit:contain;
+  background:#000;
+  border-radius:20px;
+  flex-shrink:0;
+
 }
   .slides img,
 .slides video {
@@ -371,7 +381,7 @@ SOLICITAR ORÇAMENTO AGORA  </a>
   <h2>Projetos realizados</h2>
 
   <div class="carousel">
-    <<div class="slides" id="slides">
+    <div class="slides" id="slides">
 
       <video autoplay muted loop><source src="video1.mp4"></video>
       <img src="foto1.jpg">
@@ -437,14 +447,16 @@ window.addEventListener('scroll', () => {
 <script>
 const slides = document.getElementById('slides');
 
+if(slides){
+
 let isDown = false;
 let startX;
 let scrollLeft;
 
 /* AUTO SCROLL */
 let auto = setInterval(() => {
-  slides.scrollLeft += 1.2; // velocidade
-}, 15);
+  slides.scrollLeft += 1; // velocidade
+}, 20);
 
 /* PAUSA */
 const stopAuto = () => clearInterval(auto);
@@ -452,21 +464,15 @@ const stopAuto = () => clearInterval(auto);
 slides.addEventListener('mouseenter', stopAuto);
 slides.addEventListener('touchstart', stopAuto);
 
-/* ARRASTAR COM MOUSE */
+/* ARRASTAR */
 slides.addEventListener('mousedown', (e) => {
   isDown = true;
-  slides.classList.add('active');
   startX = e.pageX - slides.offsetLeft;
   scrollLeft = slides.scrollLeft;
 });
 
-slides.addEventListener('mouseleave', () => {
-  isDown = false;
-});
-
-slides.addEventListener('mouseup', () => {
-  isDown = false;
-});
+slides.addEventListener('mouseleave', () => isDown = false);
+slides.addEventListener('mouseup', () => isDown = false);
 
 slides.addEventListener('mousemove', (e) => {
   if(!isDown) return;
@@ -475,4 +481,6 @@ slides.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 1.5;
   slides.scrollLeft = scrollLeft - walk;
 });
+
+}
 </script>
