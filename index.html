@@ -216,12 +216,16 @@ h1, h2 {
   background: #2FBF71;
 }
 
-.slides {
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-behavior:smooth;
-  cursor:grab;
+..slides {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  padding: 10px; /* 👈 melhora toque */
+}
+  .slides {
+  -webkit-overflow-scrolling: touch;
 }
 
 .slides:active {
@@ -242,7 +246,7 @@ h1, h2 {
 
 .slides video {
   min-width:300px;
-  height:300px;
+  height:auto;
   object-fit:cover;
   background:#000;
   border-radius:20px;
@@ -542,11 +546,15 @@ slides.addEventListener('touchend', resumeAuto);
 /* ARRASTAR */
 slides.addEventListener('mousedown', (e) => {
   isDown = true;
+  slides.style.cursor = "grabbing"; // 👈 aqui também
   startX = e.pageX - slides.offsetLeft;
   scrollLeft = slides.scrollLeft;
 });
 
-slides.addEventListener('mouseup', () => isDown = false);
+slides.addEventListener('mouseup', () => {
+  isDown = false;
+  slides.style.cursor = "grab";
+});
 slides.addEventListener('mouseleave', () => isDown = false);
 
 slides.addEventListener('mousemove', (e) => {
@@ -555,6 +563,7 @@ slides.addEventListener('mousemove', (e) => {
   const x = e.pageX - slides.offsetLeft;
   const walk = (x - startX) * 1.5;
   slides.scrollLeft = scrollLeft - walk;
+  slides.style.cursor = "grabbing";
 });
 
 /* BOTÕES */
