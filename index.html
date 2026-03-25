@@ -549,13 +549,13 @@ slides.addEventListener('mousemove', (e) => {
 });
 
 /* BOTÕES */
-leftBtn.addEventListener('click', () => {
-  slides.scrollLeft -= 300;
-});
+if(leftBtn && rightBtn){
+  leftBtn.addEventListener('click', () => {
+    slides.scrollLeft -= 300;
+  });
 
-rightBtn.addEventListener('click', () => {
-  slides.scrollLeft += 300;
-});
-
+  rightBtn.addEventListener('click', () => {
+    slides.scrollLeft += 300;
+  });
 }
 </script>
