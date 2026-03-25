@@ -196,6 +196,11 @@ carousel video {
   gap:20px;
   overflow-x:auto;
   scroll-behavior:smooth;
+  cursor:grab;
+}
+
+.slides:active {
+  cursor:grabbing;
 }
 
 .slides::-webkit-scrollbar {
@@ -218,6 +223,8 @@ carousel video {
 .slides video:hover {
   transform: scale(1.05);
 }
+<div class="carousel">
+  <div class="slides" id="slides">  
 
 /* FEEDBACK */
 .feedback-grid {
@@ -427,16 +434,45 @@ window.addEventListener('scroll', () => {
 });
 
 /* CARROSSEL AUTO + PAUSA */
-const slides = document.querySelector('.slides');
+<script>
+const slides = document.getElementById('slides');
 
-setInterval(() => {
-  nextSlide();
-}, 2500); 
-  
-slides.addEventListener('mouseenter', () => clearInterval(auto));
-slides.addEventListener('touchstart', () => clearInterval(auto));
+let isDown = false;
+let startX;
+let scrollLeft;
 
+/* AUTO SCROLL */
+let auto = setInterval(() => {
+  slides.scrollLeft += 1.2; // velocidade
+}, 15);
+
+/* PAUSA */
+const stopAuto = () => clearInterval(auto);
+
+slides.addEventListener('mouseenter', stopAuto);
+slides.addEventListener('touchstart', stopAuto);
+
+/* ARRASTAR COM MOUSE */
+slides.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slides.classList.add('active');
+  startX = e.pageX - slides.offsetLeft;
+  scrollLeft = slides.scrollLeft;
+});
+
+slides.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
+slides.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+slides.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slides.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  slides.scrollLeft = scrollLeft - walk;
+});
 </script>
-
-</body>
-</html>
