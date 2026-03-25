@@ -1,32 +1,272 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title Here</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Corrected CSS styles */
-        .btn {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.3s;
-            /* Removed duplicates */
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Site Alfa</h1>
-    </header>
-    <main>
-        <div class="carousel">
-            <video src="video.mp4" controls></video>
-        </div>
-        <!-- Other content goes here -->
-    </main>
-    <footer>
-        <p>&copy; 2026 Your Company</p>
-    </footer>
-    <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alfa Automação e Portões</title>
+
+<!-- FONTES -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ÍCONES -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* BASE */
+body {
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  background:#fff;
+  color:#0f172a;
+}
+
+/* ANIMAÇÃO */
+.fade {
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+.fade.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* HERO */
+.hero {
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(180deg,#0F2A44,#1E5AA8);
+  color:white;
+}
+
+@media (max-width:768px){
+  .hero {
+    min-height:70vh;
+    padding:40px 20px;
+  }
+}
+
+/* LOGO */
+.logo {
+  height:320px;
+  max-width:90%;
+  object-fit:contain;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.25));
+}
+
+@media (min-width:1024px){
+  .logo { height:380px; }
+}
+
+@media (max-width:768px){
+  .logo { height:160px; }
+}
+
+/* TIPOGRAFIA */
+.upper {
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #2FBF71 !important;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(47,191,113,0.3);
+  opacity: 0.95;
+}
+
+@media (max-width:768px){
+  .upper {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+}
+
+h1 {
+  font-size:32px;
+  font-weight:800;
+  line-height:1.2;
+}
+
+h2 {
+  font-size:28px;
+  font-weight:700;
+}
+
+h3 {
+  font-size:20px;
+  font-weight:600;
+}
+
+p {
+  font-size:16px;
+  color:#64748b;
+}
+
+h1, h2 {
+  letter-spacing: -0.5px;
+}
+
+@media (max-width:768px){
+  h1 { font-size:28px; }
+  h2 { font-size:24px; }
+}
+
+/* BOTÃO */
+.btn {
+  margin-top:20px;
+  padding:15px 35px;
+  background:#2FBF71;
+  color:white;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+ box-shadow: 0 10px 25px rgba(47,191,113,0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(47,191,113,0.4);
+transition: all 0.3s ease;
+}
+
+/* TELEFONE */
+.phone a {
+  color:#2FBF71;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* SEÇÕES */
+.section {
+  padding:90px 20px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+/* CARD */
+.card {
+  padding:25px;
+  border-radius:20px;
+  background:#f8fafc;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* VIDEO */
+carousel video {
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  background:#000;
+
+}
+.carousel-item {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+/* ===== CARROSSEL ATUALIZADO ===== */
+.carousel {
+  max-width:900px;
+  margin:auto;
+  overflow:hidden;
+}
+
+.slides {
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  cursor:grab;
+}
+
+.slides:active {
+  cursor:grabbing;
+}
+
+.slides::-webkit-scrollbar {
+@@ -218,6 +223,8 @@
+.slides video:hover {
+  transform: scale(1.05);
+}
+<div class="carousel">
+  <div class="slides" id="slides">  
+
+/* FEEDBACK */
+.feedback-grid {
+@@ -427,16 +434,45 @@
+});
+
+/* CARROSSEL AUTO + PAUSA */
+const slides = document.querySelector('.slides');
+<script>
+const slides = document.getElementById('slides');
+
+setInterval(() => {
+  nextSlide();
+}, 2500); 
+  
+slides.addEventListener('mouseenter', () => clearInterval(auto));
+slides.addEventListener('touchstart', () => clearInterval(auto));
+let isDown = false;
+let startX;
+let scrollLeft;
+
+</script>
+/* AUTO SCROLL */
+let auto = setInterval(() => {
+  slides.scrollLeft += 1.2; // velocidade
+}, 15);
+
+/* PAUSA */
+const stopAuto = () => clearInterval(auto);
+
+slides.addEventListener('mouseenter', stopAuto);
+slides.addEventListener('touchstart', stopAuto);
+
+/* ARRASTAR COM MOUSE */
+slides.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slides.classList.add('active');
+  startX = e.pageX - slides.offsetLeft;
+  scrollLeft = slides.scrollLeft;
+});
+
+slides.addEventListener('mouseleave', () => {
+  isDown = false;
+});
+
 </body>
 </html>
+slides.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+slides.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slides.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  slides.scrollLeft = scrollLeft - walk;
+});
+</script>
