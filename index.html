@@ -27,3 +27,173 @@
 <header class="hero fade">
   <img src="assets/img/logo.png" class="logo" alt="Logo Alfa Automação e Portões">
 
+  <p class="upper">ATENDIMENTO PROFISSIONAL</p>
+
+  <h1>PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA</h1>
+
+  <p class="hero-sub">Instalação, manutenção e fabricação com padrão profissional</p>
+
+  <div class="benefits">
+    <p>Atendimento rápido em Florianópolis e região</p>
+    <p>Orçamento sem compromisso</p>
+  </div>
+
+  <div class="phone">
+    📞 <a href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento">(48) 99139‑7281</a>
+  </div>
+
+  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento">SOLICITAR ORÇAMENTO</a>
+</header>
+
+<!-- SERVIÇOS -->
+<section class="section fade">
+  <p class="upper">O QUE FAZEMOS</p>
+  <h2>Soluções completas</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3><i class="fas fa-tools"></i> Manutenção</h3>
+      <p>Reparo rápido e seguro de portões com defeito.</p>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-cogs"></i> Automação</h3>
+      <p>Instalação de motores e sistemas de segurança.</p>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-video"></i> Câmeras</h3>
+      <p>Monitoramento e configurações profissionais.</p>
+    </div>
+
+    <div class="card">
+      <h3><i class="fas fa-industry"></i> Fabricação</h3>
+      <p>Portões e estruturas sob medida.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- VÍDEO -->
+<section class="section fade">
+  <p class="upper">RESULTADO REAL</p>
+  <h2>Veja na prática</h2>
+
+  <div class="card">
+    <video controls width="100%">
+      <source src="assets/video/portao-cliente.mp4" type="video/mp4">
+    </video>
+
+    <p>Serviço rápido, organizado e profissional.</p>
+
+    <a class="btn" href="https://wa.me/5548991397281?text=Quero%20um%20serviço%20assim">QUERO UM SERVIÇO ASSIM</a>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section class="section fade">
+  <p class="upper">NOSSOS TRABALHOS</p>
+  <h2>Projetos realizados</h2>
+
+  <div class="carousel">
+
+    <button class="arrow left" id="leftBtn">&#10094;</button>
+    <button class="arrow right" id="rightBtn">&#10095;</button>
+
+    <div class="slides" id="slides">
+      <video autoplay muted loop>
+        <source src="assets/video/video1.mp4" type="video/mp4">
+      </video>
+
+      <img src="assets/img/foto1.jpg" alt="">
+      <img src="assets/img/foto2.jpg" alt="">
+      <img src="assets/img/foto3.jpg" alt="">
+      <img src="assets/img/foto4.jpg" alt="">
+    </div>
+
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section class="section fade">
+  <p class="upper">CLIENTES</p>
+  <h2>Clientes satisfeitos em Florianópolis</h2>
+
+  <div class="feedback-grid">
+    <img src="assets/img/feedback1.jpg" alt="Feedback 1">
+    <img src="assets/img/feedback2.jpg" alt="Feedback 2">
+    <img src="assets/img/feedback3.jpg" alt="Feedback 3">
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner fade">
+  <h2>Precisa de um portão funcionando hoje?</h2>
+  <p>Atendimento rápido, organizado e com garantia.</p>
+
+  <a class="btn" href="https://wa.me/5548991397281?text=Quero%20um%20orçamento">SOLICITAR ORÇAMENTO</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Alfa Automação e Portões • Florianópolis e região
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp" href="https://wa.me/5548991397281?text=Quero%20um%20orçamento">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ANIMAÇÃO -->
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 110){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+<!-- CARROSSEL -->
+<script>
+const slides = document.getElementById('slides');
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
+
+let autoScroll;
+
+function startAuto() {
+  autoScroll = setInterval(() => {
+    slides.scrollLeft += 1;
+  }, 18);
+}
+
+function stopAuto() {
+  clearInterval(autoScroll);
+}
+
+startAuto();
+
+slides.addEventListener('mouseenter', stopAuto);
+slides.addEventListener('mouseleave', startAuto);
+
+leftBtn.addEventListener('click', () => {
+  stopAuto();
+  slides.scrollBy({ left: -350, behavior: 'smooth' });
+  setTimeout(startAuto, 800);
+});
+
+rightBtn.addEventListener('click', () => {
+  stopAuto();
+  slides.scrollBy({ left: 350, behavior: 'smooth' });
+  setTimeout(startAuto, 800);
+});
+</script>
+
+</body>
+</html>
