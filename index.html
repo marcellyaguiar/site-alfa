@@ -490,46 +490,41 @@ const slides = document.getElementById('slides');
 const leftBtn = document.getElementById('leftBtn');
 const rightBtn = document.getElementById('rightBtn');
 
-if(slides){
+if (slides) {
 
 let isDown = false;
 let startX;
 let scrollLeft;
-let auto;
+let auto = null;
 
-/* FUNÇÃO AUTO */
+/* AUTO SCROLL */
 function startAuto(){
-  stopAuto(); // 👈 evita duplicar
+  stopAuto(); // evita duplicar
   auto = setInterval(() => {
-    slides.scrollLeft += 1;
+    slides.scrollLeft += 1; // velocidade suave
   }, 20);
 }
 
-/* INICIA */
+function stopAuto(){
+  if(auto){
+    clearInterval(auto);
+    auto = null;
+  }
+}
+
+/* INICIAR */
 startAuto();
 
-/* PAUSA */
-function stopAuto(){
-  clearInterval(auto);
-}
-
-/* RETOMA */
-function resumeAuto(){
-  startAuto();
-}
-
-/* HOVER */
+/* PAUSAR AO INTERAGIR */
 slides.addEventListener('mouseenter', stopAuto);
-slides.addEventListener('mouseleave', resumeAuto);
-
-/* MOBILE */
+slides.addEventListener('mouseleave', startAuto);
 slides.addEventListener('touchstart', stopAuto);
-slides.addEventListener('touchend', resumeAuto);
+slides.addEventListener('touchend', startAuto);
 
 /* ARRASTAR */
 slides.addEventListener('mousedown', (e) => {
   isDown = true;
-  slides.style.cursor = "grabbing"; // 👈 aqui também
+  slides.style.cursor = "grabbing";
   startX = e.pageX - slides.offsetLeft;
   scrollLeft = slides.scrollLeft;
 });
@@ -538,7 +533,10 @@ slides.addEventListener('mouseup', () => {
   isDown = false;
   slides.style.cursor = "grab";
 });
-slides.addEventListener('mouseleave', () => isDown = false);
+
+slides.addEventListener('mouseleave', () => {
+  isDown = false;
+});
 
 slides.addEventListener('mousemove', (e) => {
   if(!isDown) return;
@@ -546,27 +544,32 @@ slides.addEventListener('mousemove', (e) => {
   const x = e.pageX - slides.offsetLeft;
   const walk = (x - startX) * 1.5;
   slides.scrollLeft = scrollLeft - walk;
-  slides.style.cursor = "grabbing";
 });
 
-/* BOTÕES */
-if(leftBtn && rightBtn){
+/* BOTÕES (CORRIGIDO) */
+if(leftBtn){
   leftBtn.addEventListener('click', () => {
-    stopAuto(); // 👈 pausa
+    stopAuto();
     slides.scrollBy({
-      left: -300,
+      left: -320,
       behavior: 'smooth'
     });
-    startAuto(); // 👈 volta depois
-  });
 
-  rightBtn.addEventListener('click', () => {
-    stopAuto(); // 👈 pausa
-    slides.scrollBy({
-      left: 300,
-      behavior: 'smooth'
-    });
-    startAuto(); // 👈 volta depois
+    setTimeout(startAuto, 800); // volta depois
   });
 }
-  </script>
+
+if(rightBtn){
+  rightBtn.addEventListener('click', () => {
+    stopAuto();
+    slides.scrollBy({
+      left: 320,
+      behavior: 'smooth'
+    });
+
+    setTimeout(startAuto, 800);
+  });
+}
+
+}
+</script>
