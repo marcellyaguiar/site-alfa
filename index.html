@@ -128,6 +128,10 @@ h1, h2 {
   text-decoration:none;
   font-weight:600;
   display:inline-block;
+ box-shadow: 0 10px 25px rgba(47,191,113,0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(47,191,113,0.4);
+transition: all 0.3s ease;
 }
 
 /* TELEFONE */
@@ -158,11 +162,12 @@ h1, h2 {
   border-radius:20px;
   background:#f8fafc;
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
-.card i {
-  color:#2FBF71;
-  margin-right:8px;
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* VIDEO */
@@ -197,6 +202,15 @@ video {
   border-radius:20px;
   flex-shrink:0;
 }
+  .slides img,
+.slides video {
+  transition: transform 0.4s ease;
+}
+
+.slides img:hover,
+.slides video:hover {
+  transform: scale(1.05);
+}
 
 /* FEEDBACK */
 .feedback-grid {
@@ -229,6 +243,28 @@ video {
   border-radius:50px;
   text-decoration:none;
 }
+  .benefits {
+  margin-top:15px;
+}
+
+.benefits p {
+  color:#fff;
+  font-size:15px;
+  margin:5px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.benefits p::before {
+  content:"✔";
+  color:#2FBF71;
+  font-weight:bold;
+}
+  .benefits p {
+  font-weight:600;
+}
 
 </style>
 </head>
@@ -245,16 +281,20 @@ video {
   <h1>PORTÕES AUTOMÁTICOS E SEGURANÇA SOB MEDIDA</h1>
 
   <p style="color:#fff;">
-  Instalação, manutenção e fabricação com padrão profissional
+Instalação, manutenção e fabricação com padrão profissional
 </p>
 
+<div class="benefits">
+  <p>✔ Atendimento rápido em Florianópolis</p>
+  <p>✔ Orçamento sem compromisso</p>
+</div>
+
   <div class="phone">
-    📞 <a href="https://wa.me/5548991397281">(48) 99139-7281</a>
+    📞 <a href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">(48) 99139-7281</a>
   </div>
 
-  <a class="btn" href="https://wa.me/5548991397281">
-    FALAR NO WHATSAPP
-  </a>
+  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
+SOLICITAR ORÇAMENTO AGORA  </a>
 
 </div>
 
@@ -304,7 +344,7 @@ video {
 
     <p>Serviço rápido, organizado e profissional.</p>
 
-    <a class="btn" href="https://wa.me/5548991397281">
+    <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
       QUERO UM SERVIÇO ASSIM
     </a>
 
@@ -340,7 +380,7 @@ video {
 <div class="section fade">
 
   <p class="upper">CLIENTES</p>
-  <h2>O que dizem</h2>
+  <h2>Clientes satisfeitos em Florianópolis</h2>
 
   <div class="feedback-grid">
     <img src="feedback1.jpg">
@@ -353,16 +393,16 @@ video {
 <!-- BANNER -->
 <div class="banner fade">
 
-  <h2>Qualidade que você percebe</h2>
-  <p>Serviço organizado, rápido e profissional</p>
+  <h2>Precisa de um portão funcionando hoje?</h2>
+<p>Atendimento rápido, organizado e com garantia</p>
 
-  <a class="btn" href="https://wa.me/5548991397281">
+  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
     SOLICITAR ORÇAMENTO
   </a>
 
 </div>
 
-<a class="whatsapp" href="https://wa.me/5548991397281">
+<a class="whatsapp" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20portão">
   WhatsApp
 </a>
 
