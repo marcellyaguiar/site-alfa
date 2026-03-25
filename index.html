@@ -171,12 +171,19 @@ transition: all 0.3s ease;
 }
 
 /* VIDEO */
-video {
+carousel video {
   width:100%;
-  border-radius:15px;
-  margin-top:15px;
+  height:100%;
+  object-fit: contain;
+  background:#000;
+ 
 }
-
+.carousel-item {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
 /* ===== CARROSSEL ATUALIZADO ===== */
 .carousel {
   max-width:900px;
@@ -422,10 +429,10 @@ window.addEventListener('scroll', () => {
 /* CARROSSEL AUTO + PAUSA */
 const slides = document.querySelector('.slides');
 
-let auto = setInterval(() => {
-  slides.scrollLeft += 1;
-}, 20);
-
+setInterval(() => {
+  nextSlide();
+}, 2500); 
+  
 slides.addEventListener('mouseenter', () => clearInterval(auto));
 slides.addEventListener('touchstart', () => clearInterval(auto));
 
