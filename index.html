@@ -6,7 +6,7 @@
 
   <title>Sião Automação e Portões</title>
 
-  <!-- GOOGLE FONT -->
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- ÍCONES -->
@@ -14,7 +14,6 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
@@ -22,7 +21,7 @@
 <!-- HERO -->
 <header class="hero">
 
-  <img src="assets/img/logo.png" class="logo" alt="Logo Sião">
+  <img src="assets/img/logo.png" class="logo">
 
   <h1 class="gold">Segurança e automação profissional</h1>
 
@@ -34,12 +33,11 @@
     📍 Florianópolis e região • ✅ Avaliação sem custo
   </p>
 
-  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento%20de%20automação%20de%20portão">
+  <a class="btn" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento">
     <i class="fab fa-whatsapp"></i> Solicitar orçamento
   </a>
 
 </header>
-
 
 <!-- SERVIÇOS -->
 <section class="section">
@@ -65,49 +63,48 @@
 
   </div>
 
-  <p class="obs">
-    Atendemos residências, condomínios e empresas
-  </p>
+  <p class="obs">Atendemos residências, condomínios e empresas</p>
 
 </section>
 
-
-<!-- CARROSSEL SERVIÇOS -->
+<!-- CARROSSEL -->
 <section class="section">
 
   <h2>Trabalhos realizados</h2>
 
-<section class="section">
+  <div class="carousel-wrapper">
 
-  <h2>Trabalhos realizados</h2>
+    <button class="arrow left" id="leftBtn">❮</button>
 
-  <div class="carousel">
+    <div class="carousel" id="carousel">
 
-    <div class="media-item">
-      <img src="assets/img/foto1.jpg">
+      <div class="media-item">
+        <img src="assets/img/foto1.jpg">
+      </div>
+
+      <div class="media-item">
+        <img src="assets/img/foto2.jpg">
+      </div>
+
+      <div class="media-item">
+        <video src="assets/video/video1.mp4" controls></video>
+      </div>
+
+      <div class="media-item">
+        <img src="assets/img/foto3.jpg">
+      </div>
+
+      <div class="media-item">
+        <img src="assets/img/foto4.jpg">
+      </div>
+
     </div>
 
-    <div class="media-item">
-      <img src="assets/img/foto2.jpg">
-    </div>
-
-    <div class="media-item">
-      <img src="assets/img/foto3.jpg">
-    </div>
-
-    <div class="media-item">
-      <img src="assets/img/foto4.jpg">
-    </div>
-
-    <!-- VIDEO -->
-    <div class="media-item">
-      <video src="assets/video/video1.mp4" controls></video>
-    </div>
+    <button class="arrow right" id="rightBtn">❯</button>
 
   </div>
 
 </section>
-
 
 <!-- FEEDBACK -->
 <section class="section dark">
@@ -115,14 +112,22 @@
   <h2>Clientes atendidos</h2>
 
   <div class="carousel">
-    <img src="assets/img/feed1.png">
-    <img src="assets/img/feed2.png">
-    <img src="assets/img/feed3.png">
-    <img src="assets/img/feed4.png">
+
+    <div class="media-item">
+      <img src="assets/img/feed1.png">
+    </div>
+
+    <div class="media-item">
+      <img src="assets/img/feed2.png">
+    </div>
+
+    <div class="media-item">
+      <img src="assets/img/feed3.png">
+    </div>
+
   </div>
 
 </section>
-
 
 <!-- CTA -->
 <section class="cta">
@@ -136,51 +141,55 @@
 
 </section>
 
-
 <!-- FOOTER -->
 <footer class="footer">
   © 2026 Sião Automação e Portões • Florianópolis
 </footer>
 
-
 <!-- BOTÃO FIXO -->
-<a class="whatsapp" href="https://wa.me/5548991397281?text=Olá,%20quero%20um%20orçamento">
+<a class="whatsapp" href="https://wa.me/5548991397281">
   <i class="fab fa-whatsapp"></i>
 </a>
 
-  <script>
-const carousels = document.querySelectorAll('.carousel');
+<!-- SCRIPT CARROSSEL -->
+<script>
 
-carousels.forEach(carousel => {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+const carousel = document.getElementById('carousel');
+const leftBtn = document.getElementById('leftBtn');
+const rightBtn = document.getElementById('rightBtn');
 
-  carousel.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
-  });
+/* BOTÕES */
+leftBtn.onclick = () => {
+  carousel.scrollBy({ left: -320, behavior: 'smooth' });
+};
 
-  carousel.addEventListener('mouseleave', () => {
-    isDown = false;
-  });
+rightBtn.onclick = () => {
+  carousel.scrollBy({ left: 320, behavior: 'smooth' });
+};
 
-  carousel.addEventListener('mouseup', () => {
-    isDown = false;
-  });
+/* ARRASTAR */
+let isDown = false;
+let startX;
+let scrollLeft;
 
-  carousel.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 2;
-    carousel.scrollLeft = scrollLeft - walk;
-  });
+carousel.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
 });
-</script>
 
+carousel.addEventListener('mouseleave', () => isDown = false);
+carousel.addEventListener('mouseup', () => isDown = false);
+
+carousel.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
+</script>
 
 </body>
 </html>
-``
