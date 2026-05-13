@@ -12,9 +12,11 @@ body {
   background: radial-gradient(circle at top, #2a2a2a, #000);
 }
 
+
 .logo {
   height: 180px;
   margin-bottom: 20px;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
 }
 
 
