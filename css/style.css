@@ -298,3 +298,32 @@ h1, h2 {
   font-size: 13px;
 }
 
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* ÍCONES */
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #111;
+  border: 1px solid rgba(176,141,87,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B08D57;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* HOVER SUAVE */
+.footer-social a:hover {
+  transform: translateY(-2px);
+  border-color: #B08D57;
+}
+
