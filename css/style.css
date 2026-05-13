@@ -156,7 +156,47 @@ h1, h2 {
 .cta {
   background: radial-gradient(circle at center, #111, #000);
 }
+.cta {
+  background: radial-gradient(circle at center, #111, #000);
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+/* FRASE DE DOR */
+.cta-alert {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* DESCRIÇÃO */
+.cta-desc {
+  color: #bbb;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* BOTÃO MAIS FORTE */
+.cta .btn {
+  background: linear-gradient(90deg, #B08D57, #e5c27a);
+  color: #000;
+  padding: 18px 45px;
+  border-radius: 50px;
+  font-size: 18px;
+  margin-top: 25px;
+  box-shadow: 0 0 25px rgba(176,141,87,0.7);
+  transition: 0.3s;
+}
+
+.cta .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(176,141,87,1);
+}
+``
 
 /* WHATS FIXO */
 .whatsapp {
