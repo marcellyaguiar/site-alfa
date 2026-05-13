@@ -25,3 +25,147 @@
   <h1 class="gold">Segurança e automação profissional</h1>
 
   <p class="hero-sub">
+    Soluções completas para residências, condomínios e empresas
+  </p>
+
+  <p class="top-info">
+    📍 Florianópolis e região • Avaliação sem custo
+  </p>
+
+  <a class="btn" href="https://wa.me/5548991397281">
+    <i class="fab fa-whatsapp"></i> Solicitar orçamento
+  </a>
+</header>
+
+<!-- CTA SUAVE -->
+<section class="cta-top fade">
+  <p class="cta-top-alert">Seu portão parou ou apresenta falhas?</p>
+  <p class="cta-top-desc">Atendimento técnico com rapidez e qualidade</p>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section fade">
+  <h2>Soluções completas</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>🔐 Automação e portões</h3>
+      <p>Motor, manutenção e sensores de segurança</p>
+    </div>
+
+    <div class="card">
+      <h3>🏗️ Fabricação em alumínio</h3>
+      <p>Portões e cercas sob medida</p>
+    </div>
+
+    <div class="card">
+      <h3>🎥 Segurança eletrônica</h3>
+      <p>Câmeras, interfone e cerca elétrica</p>
+    </div>
+
+  </div>
+
+  <p class="obs">Atendemos residências, condomínios e empresas</p>
+</section>
+
+<!-- CARROSSEL -->
+<section class="section fade">
+  <h2>Trabalhos realizados</h2>
+
+  <div class="carousel-wrapper">
+
+    <button class="arrow left" onclick="scrollCarousel(-320)">❮</button>
+
+    <div class="carousel" id="carousel">
+
+      <div class="media-item">
+        <img src="assets/img/foto1.jpg">
+      </div>
+
+      <div class="media-item">
+        <img src="assets/img/foto2.jpg">
+      </div>
+
+      <div class="media-item">
+        <video src="assets/video/video1.mp4" controls></video>
+      </div>
+
+      <div class="media-item">
+        <img src="assets/img/foto3.jpg">
+      </div>
+
+    </div>
+
+    <button class="arrow right" onclick="scrollCarousel(320)">❯</button>
+
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta fade">
+  <h2 class="gold">Atendimento rápido em Florianópolis</h2>
+  <p class="cta-desc">Serviço técnico com qualidade e garantia</p>
+
+  <a class="btn" href="https://wa.me/5548991397281">
+    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <h3 class="footer-logo">SIÃO</h3>
+
+    <p class="footer-desc">
+      Automação e segurança para residências e condomínios
+    </p>
+
+    <p class="footer-location">📍 Florianópolis e região</p>
+
+    <div class="footer-social">
+      <a href="#" class="footer-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://wa.me/5548991397281" class="footer-icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <p class="footer-copy">© 2026 Sião Automação e Portões</p>
+
+  </div>
+
+</footer>
+
+<!-- WHATS FIXO -->
+<a class="whatsapp" href="https://wa.me/5548991397281">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- SCRIPT -->
+<script>
+function scrollCarousel(value) {
+  document.getElementById('carousel').scrollBy({
+    left: value,
+    behavior: 'smooth'
+  });
+}
+
+/* animação */
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
