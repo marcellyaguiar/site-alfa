@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sião Automação e Portões • Florianópolis</title>
+  <title>Sião Automação e Portões • Florianópolis</title>
 
-<meta name="description" content="Automação, portões e segurança em Florianópolis. Soluções premium.">
+  <meta name="description" content="Automação, portões e segurança em Florianópolis. Soluções premium para residências e condomínios.">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- HERO -->
 <header class="hero fade">
-  <img src="assets/img/logo.png" class="logo">
+
+  <img src="assets/img/logo.png" class="logo" alt="Sião Automação e Portões">
 
   <p class="upper">SEGURANÇA E TECNOLOGIA</p>
 
@@ -43,9 +47,12 @@
   <a class="btn" href="https://wa.me/5548991397281">
     SOLICITAR ORÇAMENTO
   </a>
+
 </header>
 
+<!-- SERVIÇOS -->
 <section class="section fade">
+
   <h2>Soluções completas de segurança</h2>
 
   <div class="grid">
@@ -57,34 +64,84 @@
 
     <div class="card">
       <h3>Automação</h3>
-      <p>Controle de acesso moderno com tecnologia de alto desempenho.</p>
+      <p>Controle de acesso com tecnologia de alto desempenho.</p>
     </div>
 
     <div class="card">
       <h3>Monitoramento</h3>
-      <p>Soluções com câmeras e vigilância inteligente.</p>
+      <p>Câmeras e sistemas inteligentes de vigilância.</p>
     </div>
 
     <div class="card">
       <h3>Portões Sob Medida</h3>
-      <p>Projetos personalizados com acabamento premium.</p>
+      <p>Projetos personalizados com acabamento profissional.</p>
     </div>
 
   </div>
+
 </section>
 
+<!-- DIFERENCIAIS -->
+<section class="section fade">
+
+  <h2>Por que escolher a Sião?</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Alta Durabilidade</h3>
+      <p>Equipamentos robustos e instalação técnica profissional.</p>
+    </div>
+
+    <div class="card">
+      <h3>Segurança Real</h3>
+      <p>Proteção completa para residências e condomínios.</p>
+    </div>
+
+    <div class="card">
+      <h3>Atendimento Rápido</h3>
+      <p>Suporte ágil em toda região de Florianópolis.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BANNER -->
 <section class="banner fade">
+
   <h2>Proteja seu acesso com tecnologia e confiança</h2>
   <p>Soluções completas para sua segurança</p>
 
   <a class="btn" href="https://wa.me/5548991397281">
     SOLICITAR ORÇAMENTO
   </a>
+
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   © 2026 Sião Automação e Portões • Florianópolis
 </footer>
+
+<!-- WHATS -->
+<a class="whatsapp" href="https://wa.me/5548991397281">
+  📲
+</a>
+
+<!-- ANIMAÇÃO -->
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
