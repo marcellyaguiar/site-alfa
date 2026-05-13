@@ -13,33 +13,31 @@ body {
 }
 
 .logo {
-  height: 130px;
-  margin-bottom: 20px;
+  height: 120px;
+  margin-bottom: 10px;
 }
 
-/* TEXTOS */
+.top-info {
+  color: #B08D57;
+  font-size: 14px;
+}
+
+/* TITULOS COM EFEITO */
 h1, h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 
-    0 0 10px rgba(176,141,87,0.4),
+  text-shadow:
+    0 0 10px rgba(176,141,87,0.5),
     0 0 20px rgba(176,141,87,0.2);
 }
 
-h3 {
-  font-size: 18px;
-}
-
-p {
-  color: #aaa;
-}
-
-/* EFEITO DOURADO */
 .gold {
   color: #B08D57;
-  text-shadow:
-    0 0 8px rgba(176,141,87,0.7),
-    0 0 20px rgba(176,141,87,0.3);
+}
+
+/* TEXTO */
+p {
+  color: #aaa;
 }
 
 /* BOTÃO */
@@ -85,33 +83,23 @@ p {
   border: 1px solid #B08D57;
 }
 
-/* GALERIA */
-.gallery {
-  display: grid;
+/* CARROSSEL */
+.carousel {
+  display: flex;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
 }
 
-.gallery img {
-  width: 100%;
+.carousel img {
+  height: 250px;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
-/* DEPOIMENTOS */
-.testimonial {
-  background: #111;
-  border-left: 4px solid #B08D57;
-}
-
-.testimonial p {
-  font-style: italic;
-  color: #ddd;
-}
-
-.testimonial span {
-  display: block;
-  margin-top: 10px;
-  color: #B08D57;
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 /* CTA */
