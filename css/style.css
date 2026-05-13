@@ -9,7 +9,7 @@ body {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(180deg, #000, #1C1C1C);
+  background: radial-gradient(circle at top, #2a2a2a, #000);
 }
 
 .logo {
@@ -19,37 +19,47 @@ body {
 
 .top-info {
   color: #B08D57;
-  font-size: 14px;
+  margin-top: 10px;
 }
 
-/* TITULOS COM EFEITO */
+.hero-sub {
+  color: #bbb;
+  font-size: 18px;
+}
+
+/* TITULOS */
 h1, h2 {
   text-transform: uppercase;
-  letter-spacing: 1px;
   text-shadow:
     0 0 10px rgba(176,141,87,0.5),
-    0 0 20px rgba(176,141,87,0.2);
+    0 0 20px rgba(176,141,87,0.3);
 }
 
 .gold {
   color: #B08D57;
 }
 
-/* TEXTO */
-p {
-  color: #aaa;
-}
-
 /* BOTÃO */
 .btn {
-  background: #B08D57;
+  background: linear-gradient(90deg, #B08D57, #e5c27a);
   color: #000;
-  padding: 15px 30px;
-  border-radius: 30px;
-  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 40px;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 25px;
+  text-decoration: none;
   font-weight: bold;
+  box-shadow: 0 0 20px rgba(176,141,87,0.5);
+  transition: 0.3s;
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(176,141,87,0.8);
 }
 
 /* SEÇÕES */
@@ -58,6 +68,7 @@ p {
   max-width: 1100px;
   margin: auto;
   text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .section.dark {
@@ -73,14 +84,21 @@ p {
 
 /* CARD */
 .card {
-  background: #2A2A2A;
-  padding: 20px;
-  border-radius: 10px;
+  background: linear-gradient(180deg, #2a2a2a, #1c1c1c);
+  padding: 25px;
+  border-radius: 12px;
   transition: .3s;
 }
 
 .card:hover {
   border: 1px solid #B08D57;
+  transform: translateY(-5px);
+}
+
+/* OBS */
+.obs {
+  margin-top: 20px;
+  color: #B08D57;
 }
 
 /* CARROSSEL */
@@ -93,9 +111,16 @@ p {
 }
 
 .carousel img {
-  height: 250px;
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
 }
 
 .carousel::-webkit-scrollbar {
@@ -104,27 +129,32 @@ p {
 
 /* CTA */
 .cta {
-  text-align: center;
-  padding: 60px 20px;
   background: #000;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 /* FOOTER */
 .footer {
-  text-align: center;
-  padding: 20px;
   background: #000;
   color: #777;
+  text-align: center;
+  padding: 20px;
 }
 
-/* WHATS */
+/* WHATS FIXO */
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #B08D57;
-  color: #000;
-  padding: 15px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+``
