@@ -13,8 +13,10 @@ body {
 }
 
 .logo {
-  height: 120px;
+  height: 180px;
+  margin-bottom: 20px;
 }
+
 
 .top-info {
   color: #B08D57;
