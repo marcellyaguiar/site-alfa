@@ -13,11 +13,26 @@ body {
 }
 
 
+
 .logo {
-  height: 200px;
+  width: 100%;
+  max-width: 420px; /* tamanho no desktop */
+  height: auto;
   margin-bottom: 20px;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.5));
 }
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+}
+
 
 
 .top-info {
