@@ -56,16 +56,18 @@ h1 {
 
 
 .hero-sub {
-  max-width: 750x;
+  width: 100%;
   margin: 0 auto;
+  text-align: center;
   line-height: 1.6;
 }
 
 
+
 @media (max-width: 768px) {
   .hero-sub {
-    max-width: 320px;
-    font-size: 15px;
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
 
